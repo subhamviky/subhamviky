@@ -3,6 +3,11 @@
 **Staff Architect & AI Architect** at SAP Labs India
 13+ years governing $350M+ in financial transaction volumes — now building production AI systems on AWS.
 
+![AWS](https://img.shields.io/badge/AWS-Bedrock_Lambda_SQS_DynamoDB-FF9900?style=flat&logo=amazonaws&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-FF6B35?style=flat)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat&logo=terraform&logoColor=white)
+
 ## What I Build
 
 My core mental model maps enterprise distributed systems patterns directly to AI-native components:
