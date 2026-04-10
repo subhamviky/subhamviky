@@ -1,15 +1,73 @@
-# Subham Gupta — Staff Architect | Cloud-Native + AI
+# Hi, I'm Subham Gupta 👋
 
-## Active Project
-**Cloud-Native Payment Reconciliation Engine** — AWS | Python | LangGraph | Bedrock
-→ [aws-reconciliation-engine](https://github.com/subhamviky/aws-reconciliation-engine)
+**Staff Architect & AI Architect** at SAP Labs India
+13+ years governing $350M+ in financial transaction volumes — now building production AI systems on AWS.
 
-FastAPI on Lambda · SQS async processing · DynamoDB idempotency · 
-LangGraph multi-agent workflow · Bedrock RAG · CloudWatch observability
+## What I Build
 
-## Background
-13+ years enterprise architecture — $350M+ financial systems at SAP Labs.
-Translating distributed systems expertise onto cloud-native and AI-native platforms.
+My core mental model maps enterprise distributed systems patterns directly to AI-native components:
 
-## Stack
-AWS · Python · LangGraph · Amazon Bedrock · FastAPI · DynamoDB · SQS
+Agent        =  microservice (reasoning unit)
+RAG          =  CQRS knowledge retrieval layer
+MCP Tool     =  idempotency-aware API action
+Orchestrator =  saga-compensating control plane
+
+## Active Portfolio
+
+### 1. Order-to-Cash Agentic AI Platform
+Phase 2
+
+> 5-agent LangGraph system with Amazon Bedrock RAG, hybrid OpenSearch retrieval, MCP-style tool
+> microservices, Terraform IaC, and RAGAS CI/CD evaluation gate.
+
+**Stack:** Python · FastAPI · LangGraph · Amazon Bedrock · OpenSearch · Terraform · ECS Fargate
+
+**Key patterns:** Two-layer DynamoDB idempotency · Circuit breakers · BM25+KNN hybrid RAG ·
+Policy-as-code governance · Async SQS FIFO + DLQ
+
+**View Repository → https://github.com/subhamviky/order-to-cash-agentic-ai **
+
+---
+
+### 2. Cloud-Native Payment Reconciliation Engine
+Phase 1
+Phase 2
+
+> Production payment reconciliation engine on AWS, directly mirroring $350M SAP TM financial
+> settlement architecture on cloud-native infrastructure.
+
+**Stack:** Python · FastAPI · Lambda · SQS + DLQ · DynamoDB · CloudWatch · Amazon Bedrock
+
+**Key patterns:** Async POST → PENDING → RECONCILED pipeline · DLQ escalation with backoff ·
+LangGraph agent routing · Bedrock Titan RAG over financial audit logs
+
+**View Repository → https://github.com/subhamviky/aws-reconciliation-engine **
+
+---
+## What I've Proven at Enterprise Scale
+
+At SAP Labs, working on $350M+ financial settlement systems:
+
+- **80% runtime reduction** — Re-engineered synchronous invoicing engine to async pipeline (35 min → 7 min) for 10,000+ daily freight orders
+- **Zero audit failures** — Designed idempotency + exactly-once processing for $350M+ in distributed financial postings across 150+ global vendors
+- **99.9% stability** — Primary Incident Commander for 300+ mission-critical escalations annually
+
+---
+
+## Tech Across Both Portfolios
+
+FastAPI
+LangChain
+DynamoDB
+SQS
+OpenSearch
+Terraform
+GitHub Actions
+
+---
+## Connect
+
+LinkedIn -> https://www.linkedin.com/in/subham-gupta-0a05a058
+Email -> subhamviky@gmail.com
+
+*Open to conversations about Agentic AI platform design, RAG at scale, and cloud-native financial systems.*
