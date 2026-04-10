@@ -8,19 +8,25 @@
 ![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-FF6B35?style=flat)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat&logo=terraform&logoColor=white)
 
+---
+
 ## What I Build
 
 My core mental model maps enterprise distributed systems patterns directly to AI-native components:
 
+```
 Agent        =  microservice (reasoning unit)
 RAG          =  CQRS knowledge retrieval layer
 MCP Tool     =  idempotency-aware API action
 Orchestrator =  saga-compensating control plane
+```
+
+---
 
 ## Active Portfolio
 
 ### 1. Order-to-Cash Agentic AI Platform
-Phase 2
+![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)
 
 > 5-agent LangGraph system with Amazon Bedrock RAG, hybrid OpenSearch retrieval, MCP-style tool
 > microservices, Terraform IaC, and RAGAS CI/CD evaluation gate.
@@ -30,13 +36,13 @@ Phase 2
 **Key patterns:** Two-layer DynamoDB idempotency · Circuit breakers · BM25+KNN hybrid RAG ·
 Policy-as-code governance · Async SQS FIFO + DLQ
 
-**View Repository → https://github.com/subhamviky/order-to-cash-agentic-ai **
+**[View Repository →](https://github.com/subhamviky/order-to-cash-agentic-ai)**
 
 ---
 
 ### 2. Cloud-Native Payment Reconciliation Engine
-Phase 1
-Phase 2
+![Phase 1](https://img.shields.io/badge/Phase_1-Live_on_AWS-brightgreen?style=flat)
+![Phase 2](https://img.shields.io/badge/Phase_2-Q2_2026-blue?style=flat)
 
 > Production payment reconciliation engine on AWS, directly mirroring $350M SAP TM financial
 > settlement architecture on cloud-native infrastructure.
@@ -46,9 +52,10 @@ Phase 2
 **Key patterns:** Async POST → PENDING → RECONCILED pipeline · DLQ escalation with backoff ·
 LangGraph agent routing · Bedrock Titan RAG over financial audit logs
 
-**View Repository → https://github.com/subhamviky/aws-reconciliation-engine **
+**[View Repository →](https://github.com/subhamviky/aws-reconciliation-engine)**
 
 ---
+
 ## What I've Proven at Enterprise Scale
 
 At SAP Labs, working on $350M+ financial settlement systems:
@@ -61,18 +68,19 @@ At SAP Labs, working on $350M+ financial settlement systems:
 
 ## Tech Across Both Portfolios
 
-FastAPI
-LangChain
-DynamoDB
-SQS
-OpenSearch
-Terraform
-GitHub Actions
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-LangGraph-1C3C3C?style=flat)
+![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat&logo=amazondynamodb&logoColor=white)
+![SQS](https://img.shields.io/badge/SQS_+_DLQ-FF9900?style=flat&logo=amazonaws&logoColor=white)
+![OpenSearch](https://img.shields.io/badge/OpenSearch-005EB8?style=flat&logo=opensearch&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat&logo=terraform&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
 
 ---
+
 ## Connect
 
-LinkedIn -> https://www.linkedin.com/in/subham-gupta-0a05a058
-Email -> subhamviky@gmail.com
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Subham_Gupta-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/subham-gupta-0a05a058)
+[![Email](https://img.shields.io/badge/Email-subhamviky@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:subhamviky@gmail.com)
 
 *Open to conversations about Agentic AI platform design, RAG at scale, and cloud-native financial systems.*
