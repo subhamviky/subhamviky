@@ -66,6 +66,27 @@ At SAP Labs, working on $350M+ financial settlement systems:
 
 ---
 
+## 🏛️ Architectural Philosophy — Correct by Design
+ 
+> *Idempotency and Reconciliation are **business features**, and not just technical safeguards.*
+ 
+At SAP TM scale, financial integrity was achieved not by adding defensive code, but by making incorrect states architecturally impossible:
+ 
+| SAP TM Mechanism | What It Enforces | Cloud-Native Equivalent |
+|---|---|---|
+| Line-Element Key | Deterministic 1:1 charge-to-settlement mapping — revised amounts route as valid updates, never duplicates | Redis `SETNX` idempotency key · DynamoDB conditional write |
+| "Completely Invoiced" business gate | Ledger posting blocked until business status confirmed — immutable by contract, not by code | `SettlementState.COMPLETED` as the only valid pre-condition for ledger write |
+| Dispute Management workflow | Charge delta mediation as a first-class business process — unblocks final posting without bypassing integrity | RAG-powered reasoning agent references policy docs to resolve discrepancies; CriticAgent groundedness gate |
+| SAP FI posting rules | Finance Ledger is a write-once source of truth | Double-entry `UNIQUE` index on `(settlement_id, direction, entry_type)` · reversal-only corrections |
+ 
+**The result:** every transaction is *Correct by Design* — the system governs financial integrity
+at the architectural level, not at the exception-handling level.
+ 
+This is the mental model carried from $350M+ SAP TM delivery into:
+- `@Idempotent` AOP (Redis SETNX) in the Financial Settlement Platform
+- Two-layer DynamoDB idempotency in the Payment Reconciliation Engine
+- CriticAgent SLO gate (groundedness ≥ 0.85) in the Order-to-Cash platform
+
 ## Tech Across Both Portfolios
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
