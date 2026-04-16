@@ -12,14 +12,13 @@
 
 ## What I Build
 
-My core mental model maps enterprise distributed systems patterns directly to AI-native components:
+My core mental model maps 13+ years of enterprise distributed systems
+patterns directly to AI-native components:
 
-```
-Agent        =  microservice (reasoning unit)
-RAG          =  CQRS knowledge retrieval layer
-MCP Tool     =  idempotency-aware API action
-Orchestrator =  saga-compensating control plane
-```
+![SAP RAP to Python Agentic Stack mental model](https://raw.githubusercontent.com/subhamviky/order-to-cash-agentic-ai/main/docs/images/sap-to-agentic-mental-model.svg)
+
+> The diagram above is not a translation — it is the same pattern set, different runtime.
+> OData = FastAPI. BDEF = BaseAgent. CDS Entity = AgentState. The framework changed. The thinking didn't.
 
 ---
 
