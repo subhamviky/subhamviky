@@ -54,6 +54,8 @@ LangGraph agent routing · Bedrock Titan RAG over financial audit logs
 **[View Repository →](https://github.com/subhamviky/aws-reconciliation-engine)**
 
 ---
+📐 **[E2A Framework](https://github.com/subhamviky/e2a-framework)** — Enterprise-to-Agentic
+Architecture: formal mapping of SAP RAP / Spring Boot / Oracle patterns to LangGraph agent systems.
 
 ## What I've Proven at Enterprise Scale
 
