@@ -88,6 +88,12 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 - Two-layer DynamoDB idempotency in the Payment Reconciliation Engine
 - CriticAgent SLO gate (groundedness ≥ 0.85) in the Order-to-Cash platform
 
+## Expertise Framework
+
+<p align="center">
+  <img src="expertise_framework_cloud_native.svg" width="520" alt="Expertise Differentiator Framework"/>
+</p>
+
 ## Tech Across Both Portfolios
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
