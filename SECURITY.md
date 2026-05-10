@@ -1,0 +1,1 @@
+Users are responsible for implementing PII (Personally Identifiable Information) masking or redaction within their _apply_policy protected methods. The E2A Framework’s public run() method logs the state object for observability; ensure sensitive data is removed before these logs are emitted to cloud providers.
