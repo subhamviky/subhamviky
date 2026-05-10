@@ -1,6 +1,5 @@
 # Hi, I'm Subham Gupta 👋
 
-**Staff Architect & AI Architect** at SAP Labs India
 13+ years governing $350M+ in financial transaction volumes — now building production AI systems on AWS.
 
 ![AWS](https://img.shields.io/badge/AWS-Bedrock_Lambda_SQS_DynamoDB-FF9900?style=flat&logo=amazonaws&logoColor=white)
