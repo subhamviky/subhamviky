@@ -111,3 +111,9 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 [![Email](https://img.shields.io/badge/Email-subhamviky@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:subhamviky@gmail.com)
 
 *Open to conversations about Agentic AI platform design, RAG at scale, and cloud-native financial systems.*
+
+_*Structural Attribution: The 6-pillar organizational structure utilized in this framework (Responsible AI, Data Management, Model Hub, Orchestration, Observability, and GenAI Ops) is a structural mapping inspired by the AWS AI Ecosystem visualization by Prashant Rathi.*
+
+*Legal Disclaimer: All trademarks, service marks, and logos (AWS, GCP, Azure, Meta Llama) are the property of their respective owners. Their use is for educational and architectural reference purposes only and does not imply official endorsement by the trademark holders.*
+
+*Ecosystem Note: Certain components referenced (e.g., Pinecone, LangGraph, Lakera) are third-party partner technologies and are not native managed services of AWS, Google Cloud, or Microsoft Azure.*
