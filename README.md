@@ -53,7 +53,15 @@ LangGraph agent routing · Bedrock Titan RAG over financial audit logs
 **[View Repository →](https://github.com/subhamviky/aws-reconciliation-engine)**
 
 ---
-📐 **[E2A Framework](https://github.com/subhamviky/e2a-framework)** — Enterprise-to-Agentic
+### 3. A2C Framework (Architecture-to-Code) — the meta-framework  
+[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)  
+Uses E2A-governed agents to generate enterprise-grade microservices, IaC, and CI/CD.
+NFRs enforced at generation time. Architecture as a structural constraint, not a prompt.
+
+---
+
+### 4. E2A Framework (Enterprise-to-Agentic)
+[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)
 Architecture: formal mapping of SAP RAP / Spring Boot / Oracle patterns to LangGraph agent systems.
 
 ## What I've Proven at Enterprise Scale
