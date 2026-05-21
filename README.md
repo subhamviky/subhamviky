@@ -1,6 +1,6 @@
 # Hi, I'm Subham Gupta 👋
 
-13+ years governing $350M+ in financial transaction volumes — now building production AI systems on AWS.
+**Staff Architect & AI Architecture Framework Author | Enterprise-to-Cloud Advisory** *Translating 13+ Years of Enterprise Transaction Integrity into Governed Cloud-Native & Agentic AI Architectures*
 
 ![AWS](https://img.shields.io/badge/AWS-Bedrock_Lambda_SQS_DynamoDB-FF9900?style=flat&logo=amazonaws&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)
@@ -11,58 +11,50 @@
 
 ## What I Build
 
-My core mental model maps 13+ years of enterprise distributed systems
-patterns directly to AI-native components:
+My core mental model maps 13+ years of enterprise distributed systems patterns directly to AI-native components:
 
 ![SAP RAP to Python Agentic Stack mental model](https://raw.githubusercontent.com/subhamviky/order-to-cash-agentic-ai/main/docs/images/sap-to-agentic-mental-model.svg)
 
-> The diagram above is not a translation — it is the same pattern set, different runtime.
+> The diagram above is not a translation — it is the same pattern set, different runtime.  
 > OData = FastAPI. BDEF = BaseAgent. CDS Entity = AgentState. The framework changed. The thinking didn't.
 
 ---
 
-## Active Portfolio
+## 🛠️ Proprietary Core Architectural IP (Frameworks)
 
-### 1. Order-to-Cash Agentic AI Platform
-![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)
+These frameworks represent formalized architectural standards designed to bridge traditional enterprise systems integrity with next-generation agentic workflows.
 
-> 5-agent LangGraph system with Amazon Bedrock RAG, hybrid OpenSearch retrieval, MCP-style tool
-> microservices, Terraform IaC, and RAGAS CI/CD evaluation gate.
+### 1. E2A Framework (Enterprise-to-Agentic)
+**[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)** A formal, multi-cloud architectural standard mapping legacy transaction patterns (SAP RAP / Spring Boot / Oracle) to LangGraph agent systems.
+* **Decoupled Orchestration:** Standardizes base abstract class contracts (`BaseWorkflow`, `BaseAgent`, `BaseRAGPipeline`), isolating enterprise business logic from changing foundational model SDKs.
+* **Multi-Cloud Vendor Portability:** Designed to execute the exact same agent subclass across **AWS Bedrock, GCP Vertex AI, Azure AI Foundry, or standalone Meta Llama** runtimes via metadata configuration switches—requiring **zero code changes** at the execution layer.
+* **Runtime Vendor Arbitrage:** Includes native, programmatic FinOps cost-routing engines to dynamically shift token workloads based on real-time margin requirements, programmatically solving the industry-wide AI margin crisis.
 
-**Stack:** Python · FastAPI · LangGraph · Amazon Bedrock · OpenSearch · Terraform · ECS Fargate
-
-**Key patterns:** Two-layer DynamoDB idempotency · Circuit breakers · BM25+KNN hybrid RAG ·
-Policy-as-code governance · Async SQS FIFO + DLQ
-
-**[View Repository →](https://github.com/subhamviky/order-to-cash-agentic-ai)**
-
----
-
-### 2. Cloud-Native Payment Reconciliation Engine
-![Phase 1](https://img.shields.io/badge/Phase_1-Live_on_AWS-brightgreen?style=flat)
-![Phase 2](https://img.shields.io/badge/Phase_2-Q2_2026-blue?style=flat)
-
-> Production payment reconciliation engine on AWS, directly mirroring $350M SAP TM financial
-> settlement architecture on cloud-native infrastructure.
-
-**Stack:** Python · FastAPI · Lambda · SQS + DLQ · DynamoDB · CloudWatch · Amazon Bedrock
-
-**Key patterns:** Async POST → PENDING → RECONCILED pipeline · DLQ escalation with backoff ·
-LangGraph agent routing · Bedrock Titan RAG over financial audit logs
-
-**[View Repository →](https://github.com/subhamviky/aws-reconciliation-engine)**
-
----
-### 3. A2C Framework (Architecture-to-Code) — the meta-framework  
-[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)  
-Uses E2A-governed agents to generate enterprise-grade microservices, IaC, and CI/CD.
-NFRs enforced at generation time. Architecture as a structural constraint, not a prompt.
+### 2. A2C Framework (Architecture-to-Code) — The Meta-Framework  
+**[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** An AI-governed developer platform framework designed to enforce Non-Functional Requirements (NFRs) at generation time.
+* **Correct-by-Design Generation:** Uses E2A-governed agents to programmatically generate enterprise-grade microservices, IaC, and CI/CD pipelines. It addresses "NFR Amnesia" by moving technical constraints from loose prompt engineering into strict base-class compiler policies.
+* **Automated Quality Gates:** Programmatically injects idempotency annotations, circuit breakers, structured JSON logging, and validation boundaries into generated artifacts *by construction* before code hits a repository branch, validating outputs via an automated `CodeCriticAgent` (RAGAS threshold $\ge 0.75$).
 
 ---
 
-### 4. E2A Framework (Enterprise-to-Agentic)
-[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)
-Architecture: formal mapping of SAP RAP / Spring Boot / Oracle patterns to LangGraph agent systems.
+## 📦 Architectural Spikes & Reference Runtimes (In Progress)
+*Purpose-built validation frameworks demonstrating clean core extensibility and distributed transaction management across multiple cloud stacks. These active portfolios represent the experimental sandboxes from which the formalized E2A and A2C specifications are being derived, with progressive refactoring underway to fully adopt these framework standards.*
+
+* **[Order-to-Cash Agentic AI Platform](https://github.com/subhamviky/order-to-cash-agentic-ai):** ![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)  
+  E2A Primary Reference Implementation using Python, LangGraph, Amazon Bedrock, hybrid OpenSearch retrieval, and full automated Terraform IaC. Serves as the principal testing ground for E2A's multi-agent coordination; active work focuses on refactoring the custom orchestrator to inherit directly from the formalized E2A base-class state contract.  
+  *Stack:* Python · FastAPI · LangGraph · Amazon Bedrock · OpenSearch · Terraform · ECS Fargate  
+  *Key patterns:* Two-layer DynamoDB idempotency · Circuit breakers · BM25+KNN hybrid RAG · Policy-as-code governance · Async SQS FIFO + DLQ
+
+* **[Cloud-Native Financial Settlement Platform](https://github.com/subhamviky/financial-settlement-platform):** ![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)  
+  Java E2A Reference Runtime implementing transactional saga orchestration with automatic reverse-order compensation and Redis-backed AOP idempotency over Kafka. Validates clean core extensibility principles over distributed message brokers.  
+  *Stack:* Java 21 · Spring Boot 3.x · Spring AI · Apache Kafka · Redis · PostgreSQL · Docker
+
+* **[Cloud-Native Payment Reconciliation Engine](https://github.com/subhamviky/aws-reconciliation-engine):** ![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)  
+  Serverless E2A Spike validating two-layer idempotency (FastAPI, AWS Lambda, SQS FIFO, and DynamoDB conditional writes) in production. Phase 1 validated serverless database locking; Phase 2 focuses on decoupling reconciliation rules out of procedural handlers and wrapping them in E2A-compliant tool execution blocks.  
+  *Stack:* Python · FastAPI · Lambda · SQS + DLQ · DynamoDB · CloudWatch · Amazon Bedrock  
+  *Key patterns:* Async POST → PENDING → RECONCILED pipeline · DLQ escalation with backoff · LangGraph agent routing · Bedrock Titan RAG over financial audit logs
+
+---
 
 ## What I've Proven at Enterprise Scale
 
@@ -95,11 +87,15 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 - Two-layer DynamoDB idempotency in the Payment Reconciliation Engine
 - CriticAgent SLO gate (groundedness ≥ 0.85) in the Order-to-Cash platform
 
+---
+
 ## Expertise Framework
 
 <p align="center">
   <img src="expertise_framework_cloud_native.svg" width="520" alt="Expertise Differentiator Framework"/>
 </p>
+
+---
 
 ## Tech Across Both Portfolios
 
@@ -120,8 +116,10 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 
 *Open to conversations about Agentic AI platform design, RAG at scale, and cloud-native financial systems.*
 
-*Structural Attribution: The 6-pillar organizational structure utilized in this framework (Responsible AI, Data Management, Model Hub, Orchestration, Observability, and GenAI Ops) is a structural mapping inspired by the AWS AI Ecosystem visualization by Prashant Rathi.*
+---
 
-*Legal Disclaimer: All trademarks, service marks, and logos (AWS, GCP, Azure, Meta Llama) are the property of their respective owners. Their use is for educational and architectural reference purposes only and does not imply official endorsement by the trademark holders.*
-
-*Ecosystem Note: Certain components referenced (e.g., Pinecone, LangGraph, Lakera) are third-party partner technologies and are not native managed services of AWS, Google Cloud, or Microsoft Azure.*
+<sub style="font-size: 0.8em; color: gray;">
+<b>Structural Attribution:</b> The 6-pillar organizational structure utilized in this framework (Responsible AI, Data Management, Model Hub, Orchestration, Observability, and GenAI Ops) is a structural mapping inspired by the AWS AI Ecosystem visualization by Prashant Rathi.  
+<b>Legal Disclaimer:</b> All trademarks, service marks, and logos (AWS, GCP, Azure, Meta Llama, SAP) are the property of their respective owners. Their use is for educational and architectural reference purposes only and does not imply official endorsement by the trademark holders.  
+<b>Ecosystem Note:</b> Certain components referenced (e.g., Pinecone, LangGraph, Lakera) are third-party partner technologies and are not native managed services of AWS, Google Cloud, or Microsoft Azure.
+</sub>
