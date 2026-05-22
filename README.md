@@ -3,13 +3,14 @@
 **Staff Architect & AI Architecture Framework Author | Enterprise-to-Cloud Advisory** *Translating 13+ Years of Enterprise Transaction Integrity into Governed Cloud-Native & Agentic AI Architectures*
 
 ![AWS](https://img.shields.io/badge/AWS-Bedrock_Lambda_SQS_DynamoDB-FF9900?style=flat&logo=amazonaws&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-FF6B35?style=flat)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat&logo=terraform&logoColor=white)
+![Java](https://img.shields.io/badge/Java_21-Spring_Boot_3.x-ED8B00?style=flat&logo=spring&logoColor=white)
 
 ---
 
-## What I Build
+## Architectural Mental Model — Enterprise to Cloud-Native
 
 My core mental model maps 13+ years of enterprise distributed systems patterns directly to AI-native components:
 
@@ -20,7 +21,7 @@ My core mental model maps 13+ years of enterprise distributed systems patterns d
 
 ---
 
-## 🛠️ Proprietary Core Architectural IP (Frameworks)
+## Framework Authorship — Core Architectural IP
 
 These frameworks represent formalized architectural standards designed to bridge traditional enterprise systems integrity with next-generation agentic workflows.
 
@@ -33,12 +34,12 @@ These frameworks represent formalized architectural standards designed to bridge
 ### 2. A2C Framework (Architecture-to-Code) — The Meta-Framework  
 **[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** An AI-governed developer platform framework designed to enforce Non-Functional Requirements (NFRs) at generation time.
 * **Correct-by-Design Generation:** Uses E2A-governed agents to programmatically generate enterprise-grade microservices, IaC, and CI/CD pipelines. It addresses "NFR Amnesia" by moving technical constraints from loose prompt engineering into strict base-class compiler policies.
-* **Automated Quality Gates:** Programmatically injects idempotency annotations, circuit breakers, structured JSON logging, and validation boundaries into generated artifacts *by construction* before code hits a repository branch, validating outputs via an automated `CodeCriticAgent` (RAGAS threshold $\ge 0.75$).
+* **Automated Quality Gates:** Programmatically injects idempotency annotations, circuit breakers, structured JSON logging, and validation boundaries into generated artifacts *by construction* before code hits a repository branch, validating outputs via an automated `CodeCriticAgent` (RAGAS threshold >= 0.75).
 
 ---
 
 ## 📦 Architectural Spikes & Reference Runtimes (In Progress)
-*Purpose-built validation frameworks demonstrating clean core extensibility and distributed transaction management across multiple cloud stacks. These active portfolios represent the experimental sandboxes from which the formalized E2A and A2C specifications are being derived, with progressive refactoring underway to fully adopt these framework standards.*
+*Purpose-built reference runtimes validating the E2A and A2C Frameworks — proving that the same Clean Architecture principles and financial integrity controls proven at $350M+ SAP TM scale apply across Java Spring Boot, Python FastAPI, and serverless runtimes. Progressive refactoring to full E2A base-class inheritance is underway.*
 
 * **[Order-to-Cash Agentic AI Platform](https://github.com/subhamviky/order-to-cash-agentic-ai):** ![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)  
   E2A Primary Reference Implementation using Python, LangGraph, Amazon Bedrock, hybrid OpenSearch retrieval, and full automated Terraform IaC. Serves as the principal testing ground for E2A's multi-agent coordination; active work focuses on refactoring the custom orchestrator to inherit directly from the formalized E2A base-class state contract.  
@@ -49,7 +50,8 @@ These frameworks represent formalized architectural standards designed to bridge
   Java E2A Reference Runtime implementing transactional saga orchestration with automatic reverse-order compensation and Redis-backed AOP idempotency over Kafka. Validates clean core extensibility principles over distributed message brokers.  
   *Stack:* Java 21 · Spring Boot 3.x · Spring AI · Apache Kafka · Redis · PostgreSQL · Docker
 
-* **[Cloud-Native Payment Reconciliation Engine](https://github.com/subhamviky/aws-reconciliation-engine):** ![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)  
+* **[Cloud-Native Payment Reconciliation Engine](https://github.com/subhamviky/aws-reconciliation-engine):** ![Phase 1 Live](https://img.shields.io/badge/Phase_1-Live_on_AWS-brightgreen?style=flat)
+![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)
   Serverless E2A Spike validating two-layer idempotency (FastAPI, AWS Lambda, SQS FIFO, and DynamoDB conditional writes) in production. Phase 1 validated serverless database locking; Phase 2 focuses on decoupling reconciliation rules out of procedural handlers and wrapping them in E2A-compliant tool execution blocks.  
   *Stack:* Python · FastAPI · Lambda · SQS + DLQ · DynamoDB · CloudWatch · Amazon Bedrock  
   *Key patterns:* Async POST → PENDING → RECONCILED pipeline · DLQ escalation with backoff · LangGraph agent routing · Bedrock Titan RAG over financial audit logs
@@ -62,7 +64,7 @@ At SAP Labs, working on $350M+ financial settlement systems:
 
 - **80% runtime reduction** — Re-engineered synchronous invoicing engine to async pipeline (35 min → 7 min) for 10,000+ daily freight orders
 - **Zero audit failures** — Designed idempotency + exactly-once processing for $350M+ in distributed financial postings across 150+ global vendors
-- **99.9% stability** — Primary Incident Commander for 300+ mission-critical escalations annually
+- **99.9% stability** — Primary Incident Commander for 300+ mission-critical escalations annually governing $350M+ in annual financial volumes across 150+ global vendors
 
 ---
 
@@ -92,12 +94,12 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 ## Expertise Framework
 
 <p align="center">
-  <img src="expertise_framework_cloud_native.svg" width="520" alt="Expertise Differentiator Framework"/>
+  <img src="https://raw.githubusercontent.com/subhamviky/subhamviky/main/expertise_framework_cloud_native.svg" width="520" alt="Expertise Differentiator Framework"/>
 </p>
 
 ---
 
-## Tech Across Both Portfolios
+## Tech Stack
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-LangGraph-1C3C3C?style=flat)
@@ -114,7 +116,8 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Subham_Gupta-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/subham-gupta-0a05a058)
 [![Email](https://img.shields.io/badge/Email-subhamviky@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:subhamviky@gmail.com)
 
-*Open to conversations about Agentic AI platform design, RAG at scale, and cloud-native financial systems.*
+*Open to: Cloud Solution Architect · Customer Engineer · Advisory Architect roles across Microsoft · Google Cloud · Amazon.
+Topics: Agentic AI platform design · Enterprise-to-Cloud migration · RAG at scale · Cloud-native financial systems.*
 
 ---
 
