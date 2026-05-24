@@ -28,18 +28,24 @@ These frameworks represent formalized architectural standards designed to bridge
 ### 1. E2A Framework (Enterprise-to-Agentic)
 **[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)** A formal, multi-cloud architectural standard mapping legacy transaction patterns (SAP RAP / Spring Boot / Oracle) to LangGraph agent systems.
 * **Decoupled Orchestration:** Standardizes base abstract class contracts (`BaseWorkflow`, `BaseAgent`, `BaseRAGPipeline`), isolating enterprise business logic from changing foundational model SDKs.
-* **Multi-Cloud Vendor Portability:** Designed to execute the exact same agent subclass across **AWS Bedrock, GCP Vertex AI, Azure AI Foundry, or standalone Meta Llama** runtimes via metadata configuration switches—requiring **zero code changes** at the execution layer.
-* **Runtime Vendor Arbitrage:** Includes native, programmatic FinOps cost-routing engines to dynamically shift token workloads based on real-time margin requirements, programmatically solving the industry-wide AI margin crisis.
+* **Multi-Cloud Vendor Portability:** Designed to execute the exact same agent subclass across **AWS Bedrock, GCP Vertex AI, Azure AI Foundry, or standalone Meta Llama** runtimes via metadata configuration switches — requiring **zero code changes** at the execution layer.
+* **Runtime Vendor Arbitrage:** Includes native, programmatic FinOps cost-routing engines to dynamically shift token workloads based on real-time margin requirements.
 
-### 2. A2C Framework (Architecture-to-Code) — The Meta-Framework  
+### 2. A2C Framework (Architecture-to-Code) — The Meta-Framework
 **[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** An AI-governed developer platform framework designed to enforce Non-Functional Requirements (NFRs) at generation time.
-* **Correct-by-Design Generation:** Uses E2A-governed agents to programmatically generate enterprise-grade microservices, IaC, and CI/CD pipelines. It addresses "NFR Amnesia" by moving technical constraints from loose prompt engineering into strict base-class compiler policies.
-* **Automated Quality Gates:** Programmatically injects idempotency annotations, circuit breakers, structured JSON logging, and validation boundaries into generated artifacts *by construction* before code hits a repository branch, validating outputs via an automated `CodeCriticAgent` (RAGAS threshold >= 0.75).
+* **Correct-by-Design Generation:** Uses E2A-governed agents to programmatically generate enterprise-grade microservices, IaC, and CI/CD pipelines — addressing "NFR Amnesia" by moving constraints from loose prompt engineering into strict base-class compiler policies.
+* **Automated Quality Gates:** Programmatically injects idempotency annotations, circuit breakers, structured JSON logging, and validation boundaries into generated artifacts *by construction*, validating outputs via `CodeCriticAgent` (RAGAS threshold >= 0.75).
+
+### 3. P0 Framework (Project Bootstrap) — Phase Zero
+**[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** Phase Zero scaffolding that generates the complete project foundation before A2C's code generation begins.
+* **Single bootstrap() entry point:** Generates pyproject.toml/pom.xml/go.mod, full directory tree, .gitignore, .env.example, application.yml, README scaffold, LICENSE, multi-stage Dockerfile, .dockerignore, and Makefile — in one call, under 10 seconds.
+* **Runtime and platform independent:** `ProjectBootstrapperFactory` resolves the correct subclass from a `ScaffoldRequest`; supports Python/Poetry, Python/pip, Java/Maven, Java/Gradle, Node/npm, Go; platform: AWS, GCP, Azure, standalone.
+* **Composable with A2C via `BootstrapAndGenerateWorkflow`:** A single scaffold-config.json with `scaffold` and `a2c` sections runs the full pipeline — P0 scaffolds the project, then A2C generates the business logic, IaC, and CI/CD in sequence.
 
 ---
 
 ## 📦 Architectural Spikes & Reference Runtimes (In Progress)
-*Purpose-built reference runtimes validating the E2A and A2C Frameworks — proving that the same Clean Architecture principles and financial integrity controls proven at $350M+ SAP TM scale apply across Java Spring Boot, Python FastAPI, and serverless runtimes. Progressive refactoring to full E2A base-class inheritance is underway.*
+*Purpose-built reference runtimes validating the E2A, A2C, and P0 Frameworks — proving that the same Clean Architecture principles and financial integrity controls proven at $350M+ SAP TM scale apply across Java Spring Boot, Python FastAPI, and serverless runtimes. Active refactoring to full E2A/A2C/P0 base-class inheritance is underway.*
 
 * **[Order-to-Cash Agentic AI Platform](https://github.com/subhamviky/order-to-cash-agentic-ai):** ![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)  
   E2A Primary Reference Implementation using Python, LangGraph, Amazon Bedrock, hybrid OpenSearch retrieval, and full automated Terraform IaC. Serves as the principal testing ground for E2A's multi-agent coordination; active work focuses on refactoring the custom orchestrator to inherit directly from the formalized E2A base-class state contract.  
