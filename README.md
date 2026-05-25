@@ -7,6 +7,7 @@
 ![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-FF6B35?style=flat)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat&logo=terraform&logoColor=white)
 ![Java](https://img.shields.io/badge/Java_21-Spring_Boot_3.x-ED8B00?style=flat&logo=spring&logoColor=white)
+![G2C](https://img.shields.io/badge/G2C-Generate--to--Class-8B2500?style=flat)
 
 ---
 
@@ -42,10 +43,22 @@ These frameworks represent formalized architectural standards designed to bridge
 * **Runtime and platform independent:** `ProjectBootstrapperFactory` resolves the correct subclass from a `ScaffoldRequest`; supports Python/Poetry, Python/pip, Java/Maven, Java/Gradle, Node/npm, Go; platform: AWS, GCP, Azure, standalone.
 * **Composable with A2C via `BootstrapAndGenerateWorkflow`:** A single scaffold-config.json with `scaffold` and `a2c` sections runs the full pipeline — P0 scaffolds the project, then A2C generates the business logic, IaC, and CI/CD in sequence.
 
+### 4. G2C Framework (Generate-to-Class) — Top of Stack
+**[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)**
+E2A-governed generator classes that produce E2A abstract classes, A2C abstract classes, and
+inherited concrete implementations via LLM. The framework stack made self-generating.
+* **Self-referential design:** G2C generator classes are themselves E2A-governed agents
+  inheriting from `BaseGeneratorAgent`. The agent is governed by E2A. The output follows
+  E2A. Architecture is enforced at class generation time.
+* **One call, complete output:** `DeveloperPlatformWorkflow.generate(request, config)`
+  chains E2AAbstractClassGenerator, P0 scaffolding, and inherited class generation
+  automatically from a single `generator-config.json`.
+* **Runtime-agnostic output:** generator classes are Python; generated output is any
+  runtime (Python, Java, Node, Go) via `request['runtime']` -- zero generator code changes.
 ---
 
 ## 📦 Architectural Spikes & Reference Runtimes (In Progress)
-*Purpose-built reference runtimes validating the E2A, A2C, and P0 Frameworks — proving that the same Clean Architecture principles and financial integrity controls proven at $350M+ SAP TM scale apply across Java Spring Boot, Python FastAPI, and serverless runtimes. Active refactoring to full E2A/A2C/P0 base-class inheritance is underway.*
+*Purpose-built reference runtimes validating the E2A, A2C, P0 and G2C Frameworks — proving that the same Clean Architecture principles and financial integrity controls proven at $350M+ SAP TM scale apply across Java Spring Boot, Python FastAPI, and serverless runtimes. Active refactoring to full E2A/A2C/P0 base-class inheritance is underway.*
 
 * **[Order-to-Cash Agentic AI Platform](https://github.com/subhamviky/order-to-cash-agentic-ai):** ![Phase 2](https://img.shields.io/badge/Phase_2-In_Progress-blue?style=flat)  
   E2A Primary Reference Implementation using Python, LangGraph, Amazon Bedrock, hybrid OpenSearch retrieval, and full automated Terraform IaC. Serves as the principal testing ground for E2A's multi-agent coordination; active work focuses on refactoring the custom orchestrator to inherit directly from the formalized E2A base-class state contract.  
