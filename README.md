@@ -133,6 +133,11 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 </p>
 
 ---
+## 📐 Framework Documentation
+
+| Document | Description |
+|---|---|
+| [G2C Phase Trigger Decision Reference](https://github.com/subhamviky/a2c-framework/raw/main/docs/G2C_Phase_Trigger_Decision_Reference.pdf) | Phase-trigger matrix for E2A · A2C · P0 · G2C — monorepo & multi-repo scenarios |
 
 ## Tech Stack
 
@@ -151,7 +156,7 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Subham_Gupta-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/subham-gupta-0a05a058)
 [![Email](https://img.shields.io/badge/Email-subhamviky@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:subhamviky@gmail.com)
 
-*Open to: Cloud Solution Architect · Customer Engineer · Advisory Architect roles across Microsoft · Google Cloud · Amazon.
+*Open to: Principal Platform Architect · Principal Systems Engineer · Core AI/Agentic Infrastructure Roles across Microsoft Azure Core · Google Cloud · Amazon Web Services.
 Topics: Agentic AI platform design · Enterprise-to-Cloud migration · RAG at scale · Cloud-native financial systems.*
 
 ---
