@@ -32,7 +32,6 @@ These frameworks represent formalized architectural standards designed to bridge
 **[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)** A formal, multi-cloud architectural standard mapping legacy transaction patterns (SAP RAP / Spring Boot / Oracle) to LangGraph agent systems.
 * **Decoupled Orchestration:** Standardizes base abstract class contracts (`BaseWorkflow`, `BaseAgent`, `BaseRAGPipeline`), isolating enterprise business logic from changing foundational model SDKs.
 * **Multi-Cloud Vendor Portability:** Designed to execute the exact same agent subclass across **AWS Bedrock, GCP Vertex AI, Azure AI Foundry, or standalone Meta Llama** runtimes via metadata configuration switches — requiring **zero code changes** at the execution layer.
-* **Runtime Vendor Arbitrage:** Includes native, programmatic FinOps cost-routing engines to dynamically shift token workloads based on real-time margin requirements.
 
 ### 2. A2C Framework (Architecture-to-Code) — The Meta-Framework
 **[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** An AI-governed developer platform framework designed to enforce Non-Functional Requirements (NFRs) at generation time.
