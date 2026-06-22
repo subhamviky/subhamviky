@@ -2,6 +2,8 @@
 
 **Staff Architect & AI Architecture Framework Author | Enterprise-to-Cloud Advisory** *Translating 13+ Years of Enterprise Transaction Integrity into Governed Cloud-Native & Agentic AI Architectures*
 
+Solo-authored architecture R&D, actively in development. Reference runtimes below validate the framework patterns against real (non-production) workloads.
+
 ![AWS](https://img.shields.io/badge/AWS-Bedrock_Lambda_SQS_DynamoDB-FF9900?style=flat&logo=amazonaws&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-FF6B35?style=flat)
@@ -37,24 +39,21 @@ These frameworks represent formalized architectural standards designed to bridge
 * **Correct-by-Design Generation:** Uses E2A-governed agents to programmatically generate enterprise-grade microservices, IaC, and CI/CD pipelines — addressing "NFR Amnesia" by moving constraints from loose prompt engineering into strict base-class compiler policies.
 * **Automated Quality Gates:** Programmatically injects idempotency annotations, circuit breakers, structured JSON logging, and validation boundaries into generated artifacts *by construction*, validating outputs via `CodeCriticAgent` (RAGAS threshold >= 0.75).
 
-### 3. P0 Framework (Project Bootstrap) — Phase Zero
-**[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** Phase Zero scaffolding that generates the complete project foundation before A2C's code generation begins.
+### 3. P0 (Project Bootstrap) — Phase Zero module
+**Module within [github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** Phase Zero scaffolding that generates the complete project foundation before A2C's code generation begins.
 * **Single bootstrap() entry point:** Generates pyproject.toml/pom.xml/go.mod, full directory tree, .gitignore, .env.example, application.yml, README scaffold, LICENSE, multi-stage Dockerfile, .dockerignore, and Makefile — in one call, under 10 seconds.
 * **Runtime and platform independent:** `ProjectBootstrapperFactory` resolves the correct subclass from a `ScaffoldRequest`; supports Python/Poetry, Python/pip, Java/Maven, Java/Gradle, Node/npm, Go; platform: AWS, GCP, Azure, standalone.
 * **Composable with A2C via `BootstrapAndGenerateWorkflow`:** A single scaffold-config.json with `scaffold` and `a2c` sections runs the full pipeline — P0 scaffolds the project, then A2C generates the business logic, IaC, and CI/CD in sequence.
 
-### 4. G2C Framework (Generate-to-Class) — Top of Stack
-**[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)**
-E2A-governed generator classes that produce E2A abstract classes, A2C abstract classes, and
-inherited concrete implementations via LLM. The framework stack made self-generating.
+### 4. G2C (Generate-to-Class) — Top-of-stack module
+**Module within [github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)**
+E2A-governed generator classes that produce E2A and A2C abstract classes via LLM.
 * **Self-referential design:** G2C generator classes are themselves E2A-governed agents
   inheriting from `BaseGeneratorAgent`. The agent is governed by E2A. The output follows
   E2A. Architecture is enforced at class generation time.
 * **One call, complete output:** `DeveloperPlatformWorkflow.generate(request, config)`
   chains E2AAbstractClassGenerator, P0 scaffolding, and inherited class generation
   automatically from a single `generator-config.json`.
-* **Runtime-agnostic output:** generator classes are Python; generated output is any
-  runtime (Python, Java, Node, Go) via `request['runtime']` -- zero generator code changes.
 ---
 
 ## 🎯 Vision — Framework-to-Platform Productization
@@ -63,12 +62,12 @@ The E2A, A2C, P0, and G2C frameworks are a vendor-neutral productization bluepri
 
 | Framework | What it solves | Productization form |
 |---|---|---|
-| **E2A** | Enterprise agentic AI governance — idempotency, SLOs, multi-cloud portability | Managed AI guardrails and orchestration service |
-| **A2C** | NFR-first code generation — architecture enforced at generation time, not in review | Enterprise AI developer productivity service |
-| **P0** | Project scaffolding — complete project foundation in one call, any runtime | AI-driven enterprise project factory service |
-| **G2C** | Framework class generation — the stack made self-generating via LLM | Enterprise architect productivity tooling |
+| **E2A** | Enterprise agentic AI governance — idempotency, SLOs, multi-cloud portability | Governed AI orchestration tooling |
+| **A2C** | NFR-first code generation — architecture enforced at generation time, not in review | Developer productivity tooling |
+| **P0** | Project scaffolding — complete project foundation in one call, any runtime | Project bootstrap tooling |
+| **G2C** | Framework class generation — the stack made self-generating via LLM | Architect productivity tooling |
 
-**The goal:** bring this framework stack into a hyperscaler's AI product suite as enterprise-grade managed services — delivering governed agentic AI, NFR-first developer tooling, and automated project bootstrapping at cloud scale to enterprise engineering teams.
+**The goal:** bring the architectural patterns in this framework stack into a hyperscaler's AI product suite as enterprise-grade developer tooling — this is solo R&D today; the design is built for that destination.
 
 The frameworks are multi-cloud by design. The productization platform is whichever company I get to work with — **AWS Bedrock · Azure AI Foundry · Google Cloud AI**.
 ---
