@@ -4,6 +4,8 @@
 
 Solo-authored architecture R&D, actively in development. Reference runtimes below validate the framework patterns against real (non-production) workloads.
 
+The core thesis: enterprise modernization and agentic AI are not separate initiatives — agentic AI makes application-level modernization structurally mandatory. An LLM cannot safely navigate tightly coupled legacy state machines; it needs clean, deterministic API boundaries to operate without reasoning drift. The E2A/A2C/P0/G2C stack is built specifically to enforce those boundaries. → Full architectural argument: https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/
+
 ![AWS](https://img.shields.io/badge/AWS-Bedrock_Lambda_SQS_DynamoDB-FF9900?style=flat&logo=amazonaws&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-FF6B35?style=flat)
