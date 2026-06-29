@@ -126,6 +126,26 @@ This is the mental model carried from $350M+ SAP TM delivery into:
 
 ---
 
+## ☁️ Framework-to-Cloud Landing Zone — The Structural Isomorphism
+
+The E2A/A2C/P0/G2C abstract class hierarchy maps **directly and completely** onto a cloud-native landing zone. This is not metaphor — the structural relationships are isomorphic. Every framework constraint has a named cloud counterpart enforced at the infrastructure level.
+
+| Framework Concept | Cloud-Native Equivalent | Enforcement Mechanism |
+|-------------------|------------------------|-----------------------|
+| **Abstract Class** | Landing Zone Account / VPC | AWS Control Tower Account Factory — every account derives from the same base blueprint |
+| **Inheritance** | Environment Promotion (DEV → QA → PROD) | Terraform module inheritance — child modules extend root with environment overrides |
+| **`_apply_policy()`** | Service Control Policy (SCP) + OPA Policy Gate | Runs before business logic; blocks non-compliant resource creation — same as SCP runs before any AWS API action |
+| **`@abstractmethod`** | Required NFR Contract (Health Check, Observability) | ECS task definition enforces `/health` endpoint; deploy fails without it |
+| **CriticAgent** | RAGAS CI/CD Gate + CloudWatch SLO Alarm | Deployment blocked if quality score < 0.85; auto-rollback triggered |
+| **Private Method** | Private Subnet / Data Tier | Security Group: no ingress from public tier; `__llm_call()` = Bedrock VPC endpoint |
+| **Public Entry Point** | API Gateway + ALB (single ingress) | SCP: deny direct VPC access; all traffic via Gateway |
+
+> **The unified principle:** A class IS a landing zone account. A method IS a cloud component. Inheritance IS environment promotion. Abstract enforcement IS Service Control Policy.
+
+→ Full reference architecture (10 sections, complete SCP governance matrix, 7-phase provisioning lifecycle): **[CLOUD_LANDING_ZONE.md](https://github.com/subhamviky/e2a-framework/blob/main/docs/CLOUD_LANDING_ZONE.md)**
+
+---
+
 ## Expertise Framework
 
 <p align="center">
