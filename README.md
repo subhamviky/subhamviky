@@ -142,7 +142,7 @@ The E2A/A2C/P0/G2C abstract class hierarchy maps **directly and completely** ont
 
 > **The unified principle:** A class IS a landing zone account. A method IS a cloud component. Inheritance IS environment promotion. Abstract enforcement IS Service Control Policy.
 
-→ Full reference architecture (10 sections, complete SCP governance matrix, 7-phase provisioning lifecycle): **[Framework-to-Cloud Landing Zone Reference](https://github.com/subhamviky/e2a-framework/blob/main/docs/CLOUD_LANDING_ZONE.md)**
+> Full reference architecture (10 sections, complete SCP governance matrix, 7-phase provisioning lifecycle): **[Framework-to-Cloud Landing Zone Reference](https://github.com/subhamviky/e2a-framework/blob/main/docs/CLOUD_LANDING_ZONE.md)**
 
 ---
 
