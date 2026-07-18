@@ -161,7 +161,7 @@ The E2A/A2C/P0/G2C abstract class hierarchy maps **directly and completely** ont
 
 | Document | Description |
 |---|---|
-| [G2C Phase Trigger Decision Reference](https://github.com/subhamviky/a2c-framework/raw/main/docs/G2C_Phase_Trigger_Decision_Reference.pdf) | Phase-trigger matrix for E2A · A2C · P0 · G2C — monorepo & multi-repo scenarios |
+| [G2C Phase Trigger Decision Reference](https://github.com/subhamviky/a2c-framework/blob/main/a2c-framework/docs/G2C_Phase_Trigger_Decision_Reference.pdf) | Phase-trigger matrix for E2A · A2C · P0 · G2C — monorepo & multi-repo scenarios |
 
 ## Tech Stack
 
