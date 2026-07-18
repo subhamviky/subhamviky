@@ -34,6 +34,7 @@ These frameworks represent formalized architectural standards designed to bridge
 **[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)** A formal, multi-cloud architectural standard mapping legacy transaction patterns (SAP RAP / Spring Boot / Oracle) to LangGraph agent systems.
 * **Decoupled Orchestration:** Standardizes base abstract class contracts (`BaseWorkflow`, `BaseAgent`, `BaseRAGPipeline`), isolating enterprise business logic from changing foundational model SDKs.
 * **Multi-Cloud Vendor Portability:** Designed to execute the exact same agent subclass across **AWS Bedrock, GCP Vertex AI, Azure AI Foundry, or standalone Meta Llama** runtimes via metadata configuration switches — requiring **zero code changes** at the execution layer.
+* - **Dual Execution Profiles:** Agentic (`BaseWorkflow`/`BaseAgent`, LangGraph) and Deterministic CQRS (`BaseOrchestrator`/`BaseCommandService`/`BaseQueryService`) — same propagation contract and abstract-class Observability/Governance layer, different Tier 2 routing shape for LLM vs. non-LLM request paths.
 
 ### 2. A2C Framework (Architecture-to-Code) — The Meta-Framework
 **[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)** An AI-governed developer platform framework designed to enforce Non-Functional Requirements (NFRs) at generation time.
@@ -143,6 +144,9 @@ The E2A/A2C/P0/G2C abstract class hierarchy maps **directly and completely** ont
 > **The unified principle:** A class IS a landing zone account. A method IS a cloud component. Inheritance IS environment promotion. Abstract enforcement IS Service Control Policy.
 
 > Full reference architecture (10 sections, complete SCP governance matrix, 7-phase provisioning lifecycle): **[Framework-to-Cloud Landing Zone Reference](https://github.com/subhamviky/e2a-framework/blob/main/docs/CLOUD_LANDING_ZONE.md)**
+>
+> E2A ships two execution profiles on this same isomorphism: **Agentic** (LLM-driven, LangGraph) and **Deterministic CQRS** (no LLM on the request path) — same propagation contract, same abstract-class Observability/Governance layer, different Tier 2 routing shape. CQRS profile reference: **[CQRS Cloud Landing Zone](https://github.com/subhamviky/e2a-framework/blob/main/docs/CQRS_CLOUD_LANDING_ZONE.md)** · **[CQRS Implementation Playbook](https://github.com/subhamviky/e2a-framework/blob/main/docs/CQRS_IMPLEMENTATION_PLAYBOOK.md)**
+---
 
 ---
 
