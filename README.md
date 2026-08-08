@@ -28,24 +28,13 @@ My core mental model maps 13+ years of enterprise distributed systems patterns d
 
 ## ⚙️ How I Work — Architectural Orchestration, Not Deep Execution
 
-I specialize in systemic thinking and shift-left design: auditing current
-and target-state setups to surface bottlenecks, optimization potential,
-and common functionality, then codifying the result as abstract patterns
-— the paved path a team builds on.
+I specialize in systemic thinking and shift-left design: auditing current and target-state setups to surface bottlenecks, optimization potential, and common functionality, then codifying the result as abstract patterns — the paved path a team builds on.
 
-That spans both HLD and LLD. At the HLD layer that means system topology,
-NFRs, and governance guardrails. At the LLD layer it means class
-contracts, method signatures, modularization strategy, encapsulation
-(public/private/protected boundaries), and single entry points — the
-abstraction, not the algorithm inside it. Deep low-level execution —
-tuning a retrieval pipeline, selecting a model, provisioning
-infrastructure — is where I hand off to domain specialists who implement
-inside the contracts I've designed.
+That spans both HLD and LLD. At the HLD layer, that means system topology, NFRs, and governance guardrails. At the LLD layer, it means class contracts, method signatures, modularization strategy, strict encapsulation boundaries (public/protected/private), and single entry points — establishing the architectural framework before implementation begins.
 
-The reference runtimes below follow the same model with AI in the
-specialist seat: I design the HLD/LLD, AI works out low-level
-implementation cases, I review and iterate — the collaboration pattern
-this framework is built to run with a human specialist at team scale.
+Deep vertical execution — tuning retrieval pipelines, model selection, or infrastructure provisioning — is where I collaborate with domain experts and AI tools to implement inside the contracts I've designed. While collaborating closely for domain-specific implementation, I retain 100% technical ownership and responsibility for the final system state: personally authoring core base abstractions (`e2a_base.py`), conducting rigorous code reviews, and verifying runtime behaviour (`multimodal_orchestrator.py`) against production state engines.
+
+The reference runtimes below showcase this exact workflow: I design the HLD/LLD contracts, AI/domain specialists accelerate execution inside those boundaries, and I review, validate, and iterate — demonstrating how this framework stack scales across engineering teams with total architectural governance.
 
 ## 🧩 One Framework, Three Use Cases
 
