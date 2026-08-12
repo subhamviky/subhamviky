@@ -135,6 +135,7 @@ At SAP Labs, working on $350M+ financial settlement systems:
 - **Zero audit failures** — Designed idempotency + exactly-once processing for $350M+ in distributed financial postings across 150+ global vendors
 - **99.9% stability** — Primary Incident Commander for 300+ mission-critical escalations annually governing $350M+ in annual financial volumes across 150+ global vendors
 - **10+ years** — Core contributor to SAP's standard TM Charge Calculation Engine, resolving thousands of scenario permutations via BAdI extensibility contracts and single-entry-point execution — the direct precedent for E2A's base-class thesis
+- **Monolith-to-microservice precedent** — Directed the BOPF-to-RAP migration of legacy TM/Settlement cores to SAP RAP with OData V4 APIs, 100% operational continuity — the structural transition underpinning E2A's base-class thesis
 
 ---
 
