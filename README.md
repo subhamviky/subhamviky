@@ -63,7 +63,7 @@ flagship use case, but it's one of three the same base classes now govern:
 These frameworks represent formalized architectural standards designed to bridge traditional enterprise systems integrity with next-generation agentic workflows.
 
 ### 1. E2A Framework (Enterprise-to-Agentic)
-**[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)** A formal, multi-cloud architectural standard mapping legacy transaction patterns (SAP RAP / Spring Boot / Oracle) to LangGraph agent systems.
+**[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)** A formal, multi-cloud architectural standard mapping legacy transaction patterns (SAP BOPF/RAP / Spring Boot / Oracle) to LangGraph agent systems.
 * **Decoupled Orchestration:** Standardizes base abstract class contracts (`BaseWorkflow`, `BaseAgent`, `BaseRAGPipeline`), isolating enterprise business logic from changing foundational model SDKs.
 * **Multi-Cloud Vendor Portability:** Designed to execute the exact same agent subclass across **AWS Bedrock, GCP Vertex AI, Azure AI Foundry, or standalone Meta Llama** runtimes via metadata configuration switches — requiring **zero code changes** at the execution layer.
 * **Dual Execution Profiles:** Agentic (`BaseWorkflow`/`BaseAgent`, LangGraph) and Deterministic CQRS (`BaseOrchestrator`/`BaseCommandService`/`BaseQueryService`) — same propagation contract and abstract-class Observability/Governance layer, different Tier 2 routing shape for LLM vs. non-LLM request paths.
@@ -134,6 +134,7 @@ At SAP Labs, working on $350M+ financial settlement systems:
 - **80% runtime reduction** — Re-engineered synchronous invoicing engine to async pipeline (35 min → 7 min) for 10,000+ daily freight orders
 - **Zero audit failures** — Designed idempotency + exactly-once processing for $350M+ in distributed financial postings across 150+ global vendors
 - **99.9% stability** — Primary Incident Commander for 300+ mission-critical escalations annually governing $350M+ in annual financial volumes across 150+ global vendors
+- **10+ years** — Core contributor to SAP's standard TM Charge Calculation Engine, resolving thousands of scenario permutations via BAdI extensibility contracts and single-entry-point execution — the direct precedent for E2A's base-class thesis
 
 ---
 
