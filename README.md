@@ -106,7 +106,7 @@ The E2A, A2C, P0, and G2C frameworks are a vendor-neutral productization bluepri
 
 **The goal:** bring the architectural patterns in this framework stack into a hyperscaler's AI product suite as enterprise-grade developer tooling — this is solo R&D today; the design is built for that destination.
 
-The frameworks are multi-cloud by design. The productization platform is whichever company I get to work with — **AWS Bedrock · Azure AI Foundry · Google Cloud AI**.
+The frameworks are multi-cloud by design. The productization platform is vendor agnostic — **AWS Bedrock · Azure AI Foundry · Google Cloud AI**.
 ---
 
 ## 📦 Architectural Spikes & Reference Runtimes (In Progress)
