@@ -95,12 +95,14 @@ E2A-governed generator classes that produce E2A and A2C abstract classes via LLM
 
 The E2A, A2C, P0, and G2C frameworks are a vendor-neutral productization blueprint for what enterprise cloud AI platforms need most: **governed, NFR-first, enterprise-grade agentic AI developer tooling**.
 
-| Framework | What it solves | Productization form |
-|---|---|---|
-| **E2A** | Enterprise agentic AI governance — idempotency, SLOs, multi-cloud portability | Governed AI orchestration tooling |
-| **A2C** | NFR-first code generation — architecture enforced at generation time, not in review | Developer productivity tooling |
-| **P0** | Project scaffolding — complete project foundation in one call, any runtime | Project bootstrap tooling |
-| **G2C** | Framework class generation — the stack made self-generating via LLM | Architect productivity tooling |
+| Framework | What it solves                                                                      | Productization form               |
+| --------- | ------------------------------------------------------------------------------------ | ---------------------------------- |
+| **E2A**   | Enterprise agentic AI governance — idempotency, SLOs, multi-cloud portability        | Governed AI orchestration tooling  |
+| **A2C**   | NFR-first code generation — architecture enforced at generation time, not in review  | Developer productivity tooling     |
+| **P0**    | Project scaffolding — complete project foundation in one call, any runtime           | Project bootstrap tooling          |
+| **G2C**   | Framework class generation — the stack made self-generating via LLM                  | Architect productivity tooling     |
+
+**Where this could land inside a hyperscaler:** beyond a single platform SKU, the stack maps to five concrete product surfaces — from forward-deployed modernization tooling to vertical-domain substrates to hyperscaler-native paved paths. Two of the five are fully specified against the class contracts above; two are directional extensions, labeled honestly as such. → **[Platform Use Cases Across Hyperscalers](https://github.com/subhamviky/e2a-framework/blob/main/docs/PLATFORM_USE_CASES.md)**
 
 **The goal:** bring the architectural patterns in this framework stack into a hyperscaler's AI product suite as enterprise-grade developer tooling — this is solo R&D today; the design is built for that destination.
 
