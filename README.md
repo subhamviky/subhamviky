@@ -9,9 +9,9 @@ Bengaluru, India | [LinkedIn](https://www.linkedin.com/in/subham-gupta-0a05a058)
 
 ### 🏛️ The Core Thesis: Modernization & Agentic AI Are Structurally Inseparable
 
-Enterprise cloud modernization and agentic AI are not parallel initiatives — **agentic AI makes clean-core modernization mandatory**. 
+Enterprise cloud modernization and agentic AI are not parallel initiatives — **agentic AI makes clean-core modernization mandatory**.
 
-An LLM or autonomous agent cannot safely navigate tightly coupled legacy monoliths or inconsistent state machines without catastrophic hallucination and reasoning drift. Autonomous workflows demand deterministic API boundaries, strict idempotency, and contract-first isolation. The **E2A / A2C / P0 / G2C** stack was engineered specifically to enforce those architectural boundaries. 
+An LLM or autonomous agent cannot safely navigate tightly coupled legacy monoliths or inconsistent state machines without catastrophic hallucination and reasoning drift. Autonomous workflows demand deterministic API boundaries, strict idempotency, and contract-first isolation. The **E2A / A2C / P0 / G2C** stack was engineered specifically to enforce those architectural boundaries.
 
 → **[Read the Full Architectural Argument on LinkedIn Pulse](https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/)**
 
@@ -21,12 +21,14 @@ An LLM or autonomous agent cannot safely navigate tightly coupled legacy monolit
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java_21-Spring_Boot_3.x-ED8B00?style=flat&logo=spring&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat&logo=terraform&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-5A67D8?style=flat)
 
 ---
 
 ## 🧭 Three Interlocking Architectural Personas
 
 My work operates across three complementary dimensions of modern enterprise systems engineering:
+
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ 1. CUSTOMER ADVISORY & CLOUD MODERNIZATION                                  │
