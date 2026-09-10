@@ -41,9 +41,9 @@ My work operates across three complementary dimensions of modern enterprise syst
                                        ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ 2. AI-ASSISTED SDLC & DEVEX PLATFORMS                                       │
-│    • P0: Zero-day project bootstrap & standardized workspace scaffolding    │
-│    • G2C: Spec-driven generate-to-class meta-generation (zero boilerplate)  │
-│    • E2A / A2C: Model Context Protocol (MCP) multi-agent governance         │
+│    • Context Engineering: P0 (zero-day bootstrap) & G2C (spec compilation   │
+│    • Harness Engineering: E2A (Model Context Protocol runtime sandboxing)   │
+│    • Eval-Driven Development: A2C (RAGAS faithfulness ≥ 0.85 quality gates) │
 └──────────────────────────────────────┬──────────────────────────────────────┘
                                        │
                           Enforces Invariants
@@ -51,7 +51,7 @@ My work operates across three complementary dimensions of modern enterprise syst
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ 3. CORE DISTRIBUTED SYSTEMS & PLATFORM INTEGRITY                            │
 │    • High-throughput calculation engines (10+ year production lifecycle)    │
-│    • 80% runtime reduction (35m → 7m) via asynchronous event pipelines     │
+│    • 80% runtime reduction (35m → 7m) via asynchronous event pipelines      │
 │    • Correct-by-Design: Distributed idempotency, Sagas & outbox guarantees  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -78,33 +78,16 @@ I specialize in **systemic thinking and shift-left design**: auditing existing a
 
 ---
 
-## 🧩 Framework Authorship — Paved Paths for the AI-Assisted SDLC
+## 🧩 Open-Source AI-SDLC Framework Stack
 
-The framework stack represents a formalized architectural standard bridging mission-critical systems reliability with AI-assisted software delivery:
+Author of four first-principles developer platform frameworks translating distributed systems rigor into modern AI-assisted engineering:
 
-### 1. E2A Framework (Enterprise-to-Agentic Governance)
-**[github.com/subhamviky/e2a-framework](https://github.com/subhamviky/e2a-framework)**  
-A multi-cloud architectural standard mapping legacy transaction-integrity patterns to agentic systems.
-* **Decoupled Orchestration:** Standardizes abstract base class contracts (`BaseWorkflow`, `BaseAgent`, `BaseRAGPipeline`), isolating enterprise logic from changing model SDKs.
-* **Multi-Cloud Vendor Portability:** Executes the identical agent subclass across **AWS Bedrock, GCP Vertex AI, and Azure AI Foundry** via configuration switches — requiring zero execution-layer code changes.
-* **Deterministic Write Guarantees:** Enforces exactly-once write semantics via deterministic outbox patterns, generalizing ledger posting guarantees to distributed AI agent tool calls.
-
-### 2. A2C Framework (Architecture-to-Code)
-**[github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)**  
-An AI-governed developer platform framework enforcing non-functional requirements (NFRs) at code generation time.
-* **Correct-by-Design Generation:** Mitigates "NFR Amnesia" by moving constraints from loose prompts into strict base-class compiler policies and automated AST validation.
-* **Quality & Faithfulness Gates:** Injects idempotency annotations, circuit breakers, and structured JSON logging by construction, validating outputs via `CodeCriticAgent` (RAGAS threshold ≥ 0.85).
-
-### 3. P0 Framework (Phase-Zero Developer Bootstrap)
-**Module within [github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)**  
-Automates workspace blueprints and greenfield repository scaffolding before feature implementation begins.
-* **Single `bootstrap()` Entry Point:** Generates project dependencies (`pyproject.toml`, `pom.xml`), Dockerfiles, CI/CD pipelines, and configuration trees in under 10 seconds.
-* **Enforced Consistency:** Bakes architectural invariants into repository scaffolding so developer squads onboard instantly into a secure, pre-configured paved path.
-
-### 4. G2C Framework (Generate-to-Class Meta-Generation)
-**Module within [github.com/subhamviky/a2c-framework](https://github.com/subhamviky/a2c-framework)**  
-Spec-driven meta-generation substrate compiling OpenAPI/OData schemas into type-safe, production-ready backend microservices (FastAPI / Spring Boot).
-* Eliminates repetitive CRUD boilerplate, automated boundary validation, and schema synchronization friction across squads.
+| Framework | Core Capability & Mechanism | AI-SDLC Discipline |
+| :--- | :--- | :--- |
+| **P0** | **Developer Workspace Blueprint & Zero-Day Bootstrap:** Standardizes containerized dependencies, security baselines, and CI/CD pipelines in <10s; generates token-efficient codebase manifests (`scaffold-config.json`) for downstream LLM synthesis. | **Context Engineering** |
+| **G2C** | **Spec-Driven Generate-to-Class:** Compiles declarative OpenAPI/OData schemas into type-safe backend microservices (FastAPI / Spring Boot), eliminating boilerplate and context drift. | **Context Compilation** |
+| **E2A** | **Model Context Protocol (MCP) Governance Substrate:** Template Method abstract base classes (`BaseWorkflow`, `BaseAgent`) enforcing execution sandboxes, distributed idempotency, and transactional outboxes. | **Harness Engineering** |
+| **A2C** | **Architecture-to-Code & NFR Governance:** Eliminates "NFR Amnesia" by injecting non-functional requirements at generation time; validates ASTs via `CodeCriticAgent` with RAGAS faithfulness thresholds (≥ 0.85). | **Eval-Driven Development (EDD)** |
 
 ---
 
@@ -142,6 +125,7 @@ The E2A/A2C class hierarchy maps isomorphically onto cloud-native infrastructure
 | **`_apply_policy()`** | Service Control Policy (SCP) / OPA Gate | Blocks non-compliant resource provisioning before deployment |
 | **`@abstractmethod`** | Required NFR Contract (Health / Metrics) | Container orchestration checks; container rejected without contract |
 | **CriticAgent** | CI/CD Quality Gate & SLO Budget | Automated deployment blocked if evaluation score drops below threshold |
+| **AIDLCPipelineOrchestrator** | Multi-Phase Saga Landing Zone | Private VPC pipeline chaining G2C → P0 → A2C with automated compensation |
 
 ---
 
