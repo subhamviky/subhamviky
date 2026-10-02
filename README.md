@@ -1,19 +1,49 @@
 # Hi, I'm Subham Gupta 👋
 
-**Staff Architect · I make AI agents safe to write to financial systems of record.**
-13+ years building ledger-grade distributed systems at SAP scale.
-Now applying the same core invariants — idempotency, sagas, transactional outbox, scoped credentials,
-and evaluation gates — to agentic AI.
+**Staff Architect · I make AI agents safe to write to financial systems of record.**  
+13+ years building ledger-grade distributed systems at SAP scale.  
+Now applying the same core invariants — idempotency, sagas, transactional outbox, scoped credentials, and evaluation gates — to agentic AI.
 
 **Start here**
-- 📄 **Whitepaper:** [Frontier AI concept → distributed-systems pattern → cloud service → control plane](https://github.com/subhamviky/e2a-framework/blob/main/docs/e2a_architecture_framework_whitepaper.md)
-- 🗺️ **Pattern map:** [E2A — Harmonizing the Frontier](https://github.com/subhamviky/e2a-framework/blob/main/docs/enterprise_architecture_ai_pattern_mapping_matrix.md)
-- ✍️ **Core Thesis:** [Why agentic AI makes application modernization mandatory](https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/)
-- 🧪 **Eval Rig:** [Context Harness & Evals: What AI SDLC Can Borrow from Automotive HIL/SIL Testing](https://www.linkedin.com/pulse/context-harness-evals-what-ai-assisted-sdlc-can-borrow-subham-gupta-fplfc/)
+- 📄 **Whitepaper:** [E2A — Harmonizing the Frontier](https://github.com/subhamviky/e2a-framework/blob/main/docs/e2a_architecture_framework_whitepaper.md)
+- 🗺️ **Pattern Map:** [Frontier AI Concept → Distributed Systems Pattern → Cloud Service Matrix](https://github.com/subhamviky/e2a-framework/blob/main/docs/enterprise_architecture_ai_pattern_mapping_matrix.md)
+- ✍️ **Core Thesis:** [Why Agentic AI Makes Application Modernization Mandatory](https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/)
+- 🧪 **Architecture Breakdown:** [Context, Harness, and Evals: What the AI-Assisted SDLC Can Borrow from Distributed Systems](https://www.linkedin.com/pulse/context-harness-evals-what-ai-assisted-sdlc-can-borrow-subham-gupta-fplfc/)
 
-> **Thesis.** An LLM cannot safely navigate tightly coupled legacy state machines. It requires clean,
-> deterministic boundaries — so agentic AI makes application-level modernization structurally mandatory.
-> E2A, A2C, P0, and G2C enforce those boundaries in code, not in prompts.
+> **Thesis.** An LLM cannot safely navigate tightly coupled legacy state machines. It requires clean, deterministic boundaries — so agentic AI makes application-level modernization structurally mandatory. E2A, A2C, P0, and G2C enforce those boundaries in code, not in prompts.
+
+---
+
+## The Tripartite Architecture
+
+Rather than replacing cloud-native platforms, this architecture acts as an **Enterprise Bridge** connecting frontier intelligence to mission-critical ledgers:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│ 1. PLUGGABLE COGNITIVE LAYER (Claude, GPT-4o, Gemini, Open-Weights)     │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│ 2. ENTERPRISE CONTROL PLANE & GOVERNANCE BRIDGE (E2A / A2C / P0 / G2C) │
+│    • AST Workspace Scaffolding (P0)    • Typed Contract Synthesis (G2C)│
+│    • Pre-Commit Eval Gates (A2C)       • Transactional Outbox & Saga   │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│ 3. HYPERSCALER RUNTIMES & SYSTEMS OF RECORD (AWS, GCP, Azure, SAP Core)│
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+### Multi-Stakeholder Value Realization
+
+| Stakeholder Lens | Enterprise Operational Risk | Architecture Solution |
+| :--- | :--- | :--- |
+| **Chief Architect & VP Eng** | Proprietary AI vendor lock-in | **Hexagonal Architecture:** Cognitive models sit behind standardized, pluggable interfaces. |
+| **CISO & Chief Risk Officer** | Non-deterministic write drift | **Deterministic Gates:** Programmatic AST validation and RAGAS faithfulness ($\ge 0.85$) before commit. |
+| **FinOps & Cloud Economics** | Runaway agentic token burn | **AST Context Pruning (`P0`):** Strips syntactic noise to optimize context window utilization. |
+| **SRE & Operations** | Partial writes & state corruption | **Saga Orchestration:** $\text{HMAC-SHA256}$ deduplication with automated compensating rollback actions. |
+
+---
 
 ## The Mental Model
 *Same pattern set, different runtime.* OData → FastAPI · BDEF → `BaseAgent` · CDS entity → `AgentState`.
@@ -21,8 +51,7 @@ and evaluation gates — to agentic AI.
 ![SAP RAP to Python agentic stack](https://raw.githubusercontent.com/subhamviky/order-to-cash-agentic-ai/main/docs/images/sap-to-agentic-mental-model.svg)
 
 ## Correct by Design
-Financial integrity at enterprise scale stems from making invalid states architecturally impossible,
-not from defensive prompt engineering. Idempotency, lineage, and reconciliation are business features.
+Financial integrity at enterprise scale stems from making invalid states architecturally impossible, not from defensive prompt engineering. Idempotency, lineage, and reconciliation are business features.
 
 | Enterprise Mechanism | What It Enforces | Cloud-Native / Agentic Equivalent |
 |---|---|---|
@@ -32,7 +61,7 @@ not from defensive prompt engineering. Idempotency, lineage, and reconciliation 
 | Write-once finance ledger | Immutable source of truth | Double-entry unique index; reversal-only corrections |
 
 ## The Framework Family
-A cohesive architectural methodology designed to translate high-level enterprise governance, security, and NFRs into deterministic code boundaries.
+A cohesive architectural methodology designed to translate high-level enterprise governance, security, and NFRs into deterministic code boundaries:
 
 | Framework | Architecture Scope | Core Invariant Enforced | Repository |
 | :--- | :--- | :--- | :--- |
@@ -66,7 +95,7 @@ Concrete runtimes proving the framework's deterministic boundaries and enterpris
 - **Mission-Critical Production Ownership:** Lead escalation architect for complex enterprise incidents, resolving tier-1 production blockers across global deployments.
 
 ## Open To
-Principal / Staff platform-architecture roles in agentic AI infrastructure & strategic customer workloads — Microsoft Azure, Google Cloud, AWS.
+Principal / Staff platform-architecture roles in agentic AI infrastructure, enterprise solutions architecture & strategic customer workloads — Anthropic, AWS, Microsoft Azure, Google Cloud.
 
 [LinkedIn](https://www.linkedin.com/in/subham-gupta-0a05a058) · [Email](mailto:subhamviky@gmail.com)
 
