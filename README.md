@@ -1,138 +1,74 @@
 # Hi, I'm Subham Gupta 👋
 
-**Principal Enterprise Architect & Systems Engineering Leader**  
-*Enterprise Cloud Modernization & Customer Advisory • AI-Assisted SDLC Platforms • Core Distributed Systems ($350M+ Scale)*
+**Staff Architect · I make AI agents safe to write to financial systems of record.**
+13+ years building ledger-grade distributed systems at SAP scale.
+Now applying the same core invariants — idempotency, sagas, transactional outbox, scoped credentials,
+and evaluation gates — to agentic AI.
 
-Bengaluru, India | [LinkedIn](https://www.linkedin.com/in/subham-gupta-0a05a058) | [Email](mailto:subhamviky@gmail.com)
+**Start here**
+- 📄 **Whitepaper:** [E2A — Harmonizing the Frontier](https://github.com/subhamviky/e2a-framework/blob/main/docs/whitepaper.md)
+- 🗺️ **Pattern map:** [Frontier AI concept → distributed-systems pattern → cloud service → control plane](https://github.com/subhamviky/e2a-framework/blob/main/docs/ai-pattern-mapping-matrix.md)
+- ✍️ **Core Thesis:** [Why agentic AI makes application modernization mandatory](https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/)
+- 🧪 **Eval Rig:** [Context Harness & Evals: What AI SDLC Can Borrow from Automotive HIL/SIL Testing](https://www.linkedin.com/pulse/context-harness-evals-what-ai-assisted-sdlc-can-borrow-subham-gupta-fplfc/)
 
----
+> **Thesis.** An LLM cannot safely navigate tightly coupled legacy state machines. It requires clean,
+> deterministic boundaries — so agentic AI makes application-level modernization structurally mandatory.
+> E2A, A2C, P0, and G2C enforce those boundaries in code, not in prompts.
 
-### 🏛️ The Core Thesis: Modernization & Agentic AI Are Structurally Inseparable
+## The Mental Model
+*Same pattern set, different runtime.* OData → FastAPI · BDEF → `BaseAgent` · CDS entity → `AgentState`.
 
-Enterprise cloud modernization and agentic AI are not parallel initiatives — **agentic AI makes clean-core modernization mandatory**.
+![SAP RAP to Python agentic stack](https://raw.githubusercontent.com/subhamviky/order-to-cash-agentic-ai/main/docs/images/sap-to-agentic-mental-model.svg)
 
-An LLM or autonomous agent cannot safely navigate tightly coupled legacy monoliths or inconsistent state machines without catastrophic hallucination and reasoning drift. Autonomous workflows demand deterministic API boundaries, strict idempotency, and contract-first isolation. The **E2A / A2C / P0 / G2C** stack was engineered specifically to enforce those architectural boundaries.
+## Correct by Design
+Financial integrity at enterprise scale stems from making invalid states architecturally impossible,
+not from defensive prompt engineering. Idempotency, lineage, and reconciliation are business features.
 
-→ **[Read the Full Architectural Argument on LinkedIn Pulse](https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/)**
-
-![AWS](https://img.shields.io/badge/AWS-Bedrock_Lambda_SQS_DynamoDB-FF9900?style=flat&logo=amazonaws&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-Vertex_AI_Cloud_Run-4285F4?style=flat&logo=googlecloud&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-AI_Foundry-0078D4?style=flat&logo=microsoftazure&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java_21-Spring_Boot_3.x-ED8B00?style=flat&logo=spring&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=flat&logo=terraform&logoColor=white)
-![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-5A67D8?style=flat)
-
----
-
-## 🧭 Three Interlocking Architectural Personas
-
-My work operates across three complementary dimensions of modern enterprise systems engineering:
-
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. CUSTOMER ADVISORY & CLOUD MODERNIZATION                                  │
-│    • 150+ Enterprise Accounts: Net-new discovery & clean-core migration     │
-│    • Incident Command: 300+ critical escalations de-escalated (99.9% SLO)   │
-│    • Financial De-risking: $350M+ transactional volume safeguarded          │
-└──────────────────────────────────────┬──────────────────────────────────────┘
-                                       │
-                    Informs & Validates│Directs Governance
-                                       ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 2. AI-ASSISTED SDLC & DEVEX PLATFORMS                                       │
-│    • Context Engineering: P0 (zero-day bootstrap) & G2C (spec compilation   │
-│    • Harness Engineering: E2A (Model Context Protocol runtime sandboxing)   │
-│    • Eval-Driven Development: A2C (RAGAS faithfulness ≥ 0.85 quality gates) │
-└──────────────────────────────────────┬──────────────────────────────────────┘
-                                       │
-                          Enforces Invariants
-                                       ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 3. CORE DISTRIBUTED SYSTEMS & PLATFORM INTEGRITY                            │
-│    • High-throughput calculation engines (10+ year production lifecycle)    │
-│    • 80% runtime reduction (35m → 7m) via asynchronous event pipelines      │
-│    • Correct-by-Design: Distributed idempotency, Sagas & outbox guarantees  │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-
----
-
-## ⚙️ How I Work: Architectural Orchestration & Shift-Left Invariants
-
-I specialize in **systemic thinking and shift-left design**: auditing existing and target-state enterprise landscapes to surface latent bottlenecks, model trade-offs, and codify invariants into paved paths that squads can build upon with confidence.
-
-* **At the HLD Layer:** Defining target topology, cloud interconnects, domain boundaries, NFR governance, and cost-to-serve boundaries.
-* **At the LLD Layer:** Establishing contract-first schemas, class contracts, deterministic state transitions, encapsulation boundaries, and single-entry-point invariants before engineering execution begins.
-* **In Collaborative Delivery:** Partnering with cross-functional engineering teams, domain specialists, and AI tooling inside clearly bounded interface contracts. I maintain end-to-end technical accountability for the delivered outcome — personally authoring core base abstractions, conducting deep architecture reviews, and validating runtime behavior against production invariants.
-
----
-
-## 🏛️ What I've Proven at Enterprise Scale (SAP Labs India)
-
-* **80% Runtime Compression:** Re-engineered synchronous monolithic invoice-calculation engines into decoupled, asynchronous event-driven pipelines (35 min → 7 min) across 10,000+ daily freight documents with zero business disruption.
-* **$350M+ Financial Volume De-risked:** Architected distributed idempotency keys, transactional outbox commits, and reverse-compensation Saga orchestrators across 150+ global enterprise accounts, eliminating double-spend and ledger drift.
-* **Crisis Command & 99.9% Availability:** Served as Lead Technical Authority and Incident Commander for 300+ mission-critical customer escalations annually; translating outages into transparent post-mortems and actionable SRE error-budget policies.
-* **Clean-Core Modernization Precedent:** Directed incremental modernization of legacy ERP/settlement cores to modular microservices (SAP RAP) with REST/OData V4 APIs, maintaining 100% operational continuity.
-
----
-
-## 🧩 Open-Source AI-SDLC Framework Stack
-
-Author of four first-principles developer platform frameworks translating distributed systems rigor into modern AI-assisted engineering:
-
-| Framework | Core Capability & Mechanism | AI-SDLC Discipline |
-| :--- | :--- | :--- |
-| **P0** | **Developer Workspace Blueprint & Zero-Day Bootstrap:** Standardizes containerized dependencies, security baselines, and CI/CD pipelines in <10s; generates token-efficient codebase manifests (`scaffold-config.json`) for downstream LLM synthesis. | **Context Engineering** |
-| **G2C** | **Spec-Driven Generate-to-Class:** Compiles declarative OpenAPI/OData schemas into type-safe backend microservices (FastAPI / Spring Boot), eliminating boilerplate and context drift. | **Context Compilation** |
-| **E2A** | **Model Context Protocol (MCP) Governance Substrate:** Template Method abstract base classes (`BaseWorkflow`, `BaseAgent`) enforcing execution sandboxes, distributed idempotency, and transactional outboxes. | **Harness Engineering** |
-| **A2C** | **Architecture-to-Code & NFR Governance:** Eliminates "NFR Amnesia" by injecting non-functional requirements at generation time; validates ASTs via `CodeCriticAgent` with RAGAS faithfulness thresholds (≥ 0.85). | **Eval-Driven Development (EDD)** |
-
----
-
-## 📦 Architectural Reference Runtimes & Spikes
-
-Validated reference implementations stress-testing framework invariants against realistic workloads:
-
-* **[Order-to-Cash Agentic Platform](https://github.com/subhamviky/order-to-cash-agentic-ai):** 5-agent orchestration prototype (Python, FastAPI, LangGraph, Bedrock/Vertex AI, Terraform) featuring dynamic intent routing and codebase RAG; benchmarked with RAGAS faithfulness thresholds (≥ 0.85).
-* **[Cloud-Native Financial Settlement Platform](https://github.com/subhamviky/financial-settlement-platform):** High-concurrency Java 21 / Spring Boot 3.x / Kafka runtime with a 7-state reverse-compensation Saga orchestrator and Redis-backed idempotency under split-brain simulations.
-* **[Serverless Payment Reconciliation Engine](https://github.com/subhamviky/aws-reconciliation-engine):** Event-driven serverless pipeline on AWS Lambda, SQS FIFO, and DynamoDB conditional writes validating two-layer distributed idempotency.
-
----
-
-## 🏛️ Architectural Philosophy: Correct by Design
-
-> *Idempotency, reconciliation, and auditability are **business capabilities**, not after-the-fact defensive patches.*
-
-| Enterprise ERP Mechanism | Distributed Cloud Equivalent | Architectural Invariant Enforced |
+| Enterprise Mechanism | What It Enforces | Cloud-Native / Agentic Equivalent |
 |---|---|---|
-| **Line-Element Key** | Redis `SETNX` / DynamoDB Conditional Write | Exactly-once distributed write semantics; eliminates double-execution |
-| **"Completely Invoiced" Gate** | `SettlementState.COMPLETED` Pre-condition | Ledger posting blocked until business contract verified |
-| **Dispute Management** | Agentic Reasoning & Reconciliation Loop | Discrepancy mediation as an asynchronous, audited first-class workflow |
-| **FI Posting Immutability** | Write-once append-only transactional log | Reversal-only correction patterns; zero destructive updates |
+| Deterministic charge-to-settlement key | Revisions are updates, never duplicates | Redis `SETNX` fast path + DB unique constraint · DynamoDB conditional write |
+| "Completely invoiced" business gate | No ledger posting before status confirmed | `SettlementState.COMPLETED` as the only pre-condition for a ledger write |
+| Dispute workflow | Charge-delta mediation as a business process | Policy-grounded reasoning agent + critic groundedness gate |
+| Write-once finance ledger | Immutable source of truth | Double-entry unique index; reversal-only corrections |
 
----
+## The Framework Family
+A cohesive architectural methodology designed to translate high-level enterprise governance, security, and NFRs into deterministic code boundaries.
 
-## ☁️ Framework-to-Cloud Landing Zone Mapping
+| Framework | Architecture Scope | Core Invariant Enforced | Repository |
+| :--- | :--- | :--- | :--- |
+| **E2A** (Enterprise-to-Agentic) | Runtime Governance | Invariant lifecycle execution via single entry point; pre-compute validation gates | [e2a-framework](https://github.com/subhamviky/e2a-framework) |
+| **A2C** (Architecture-to-Code) | Modernization Engine | Injects operational NFRs, schemas, and CI/CD policies directly at code generation | [a2c-framework](https://github.com/subhamviky/a2c-framework) |
+| **P0** (Phase Zero) | Ingress & Scaffolding | Zero-drift workspace bootstrap with pre-wired telemetry, auth, and contract harnesses | in [a2c-framework](https://github.com/subhamviky/a2c-framework) |
+| **G2C** (Generate-to-Class) | Model Compiler | Compiles declarative architecture specifications into typed, contract-bound classes | in [a2c-framework](https://github.com/subhamviky/a2c-framework) |
 
-The E2A/A2C class hierarchy maps isomorphically onto cloud-native infrastructure concepts:
+## Reference Implementations
+Concrete runtimes proving the framework's deterministic boundaries and enterprise invariants across heterogeneous stacks:
 
-| Framework Concept | Cloud-Native Equivalent | Enforcement Mechanism |
+* **[order-to-cash-agentic-ai](https://github.com/subhamviky/order-to-cash-agentic-ai):** Multi-agent coordination (Python, LangGraph, Bedrock, OpenSearch) featuring 5-agent bounded context isolation, hybrid RAG retrieval, and critic faithfulness verification.
+* **[aws-reconciliation-engine](https://github.com/subhamviky/aws-reconciliation-engine):** Serverless reconciliation system (Python, Lambda, DynamoDB, SQS) enforcing two-layer idempotency gates, atomic state updates, and dead-letter queue escalation.
+* **[financial-settlement-platform](https://github.com/subhamviky/financial-settlement-platform):** Distributed settlement engine (Java 21, Spring Boot 3, Kafka, PostgreSQL) validating Saga orchestration with reverse compensation, transactional outbox CDC, and double-entry immutable ledgers.
+
+*Framework abstractions are cloud-agnostic by design. Reference implementations demonstrate distributed patterns across serverless and open-source stacks, with Azure and GCP landing-zone equivalents documented in the pattern map.*
+
+## Landing-Zone Isomorphism
+| Framework Concept | Cloud Equivalent | Enforced By |
 |---|---|---|
-| **Abstract Base Class** | Landing Zone Account / VPC Blueprint | AWS Control Tower / GCP Landing Zone factory |
-| **Class Inheritance** | Environment Promotion (DEV → STAGING → PROD) | Root Terraform module parameterized per environment |
-| **`_apply_policy()`** | Service Control Policy (SCP) / OPA Gate | Blocks non-compliant resource provisioning before deployment |
-| **`@abstractmethod`** | Required NFR Contract (Health / Metrics) | Container orchestration checks; container rejected without contract |
-| **CriticAgent** | CI/CD Quality Gate & SLO Budget | Automated deployment blocked if evaluation score drops below threshold |
-| **AIDLCPipelineOrchestrator** | Multi-Phase Saga Landing Zone | Private VPC pipeline chaining G2C → P0 → A2C with automated compensation |
+| Abstract class | Landing-zone account / VPC | Control Tower account factory / Azure Landing Zone |
+| `_apply_policy()` | SCP + policy gate | Runs before business logic execution |
+| `@abstractmethod` NFR | Required NFR contract | Container task definition fails without `/health` |
+| CriticAgent | Evaluation gate in CI/CD + SLO alarm | Deployment or completion blocked below threshold |
+| Public entry point | API Gateway + ALB | Single ingress boundary |
+→ [Full reference](https://github.com/subhamviky/e2a-framework/blob/main/docs/CLOUD_LANDING_ZONE.md)
+
+## What I've Delivered at Enterprise Scale
+- **35 → 7 min** month-end batch runtime (≈80% reduction) across 10,000+ daily freight documents with zero business disruption.
+- **Ledger-Grade Integrity:** Designed exactly-once posting invariants and automated reconciliation engines across high-volume financial settlement batches.
+- **Mission-Critical Production Ownership:** Lead escalation architect for complex enterprise incidents, resolving tier-1 production blockers across global deployments.
+
+## Open To
+Principal / Staff platform-architecture roles in agentic AI infrastructure & strategic customer workloads — Microsoft Azure, Google Cloud, AWS.
+
+[LinkedIn](https://www.linkedin.com/in/subham-gupta-0a05a058) · [Email](mailto:subhamviky@gmail.com)
 
 ---
-
-## Connect & Explore
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Subham_Gupta-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/subham-gupta-0a05a058)
-[![Email](https://img.shields.io/badge/Email-subhamviky@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:subhamviky@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-subhamviky-181717?style=flat&logo=github&logoColor=white)](https://github.com/subhamviky)
-
-*Targeting Principal Customer Solutions Architect, AI-Assisted SDLC Platform Architect, and Staff/Principal Distributed Systems roles at hyperscale technology organizations.*
+*Trademarks: AWS, GCP, Azure, Meta Llama, SAP belong to their owners; used for architectural reference only. Third-party technologies named here (LangGraph, Pinecone, Lakera) are non-affiliated open-source or commercial products.*
