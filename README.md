@@ -6,8 +6,8 @@ Now applying the same core invariants — idempotency, sagas, transactional outb
 and evaluation gates — to agentic AI.
 
 **Start here**
-- 📄 **Whitepaper:** [E2A — Harmonizing the Frontier](https://github.com/subhamviky/e2a-framework/blob/main/docs/whitepaper.md)
-- 🗺️ **Pattern map:** [Frontier AI concept → distributed-systems pattern → cloud service → control plane](https://github.com/subhamviky/e2a-framework/blob/main/docs/ai-pattern-mapping-matrix.md)
+- 📄 **Whitepaper:** [E2A — Harmonizing the Frontier](https://github.com/subhamviky/e2a-framework/blob/main/docs/enterprise_architecture_ai_pattern_mapping_matrix.md)
+- 🗺️ **Pattern map:** [Frontier AI concept → distributed-systems pattern → cloud service → control plane](https://github.com/subhamviky/e2a-framework/blob/main/docs/e2a_architecture_framework_whitepaper.md)
 - ✍️ **Core Thesis:** [Why agentic AI makes application modernization mandatory](https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/)
 - 🧪 **Eval Rig:** [Context Harness & Evals: What AI SDLC Can Borrow from Automotive HIL/SIL Testing](https://www.linkedin.com/pulse/context-harness-evals-what-ai-assisted-sdlc-can-borrow-subham-gupta-fplfc/)
 
