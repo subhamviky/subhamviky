@@ -38,7 +38,7 @@ Rather than replacing cloud-native platforms, this architecture acts as an **Ent
 
 | Stakeholder Lens | Enterprise Operational Risk | Architecture Solution |
 | :--- | :--- | :--- |
-| **Chief Architect & VP Eng** | Proprietary AI vendor lock-in | **Hexagonal Architecture:** Cognitive models sit behind standardized, pluggable interfaces. |
+| **Chief Architect & VP Eng** | Proprietary AI vendor lock-in | **Hexagonal Architecture:** Cognitive models sit behind one abstract inference service (`BaseLLMAgentService`); a new provider is a single small subclass, with zero change to agents. |
 | **CISO & Chief Risk Officer** | Non-deterministic write drift | **Deterministic Gates:** Programmatic AST validation and RAGAS faithfulness ($\ge 0.85$) before commit. |
 | **FinOps & Cloud Economics** | Runaway agentic token burn | **AST Context Pruning (`P0`):** Strips syntactic noise to optimize context window utilization. |
 | **SRE & Operations** | Partial writes & state corruption | **Saga Orchestration:** $\text{HMAC-SHA256}$ deduplication with automated compensating rollback actions. |
@@ -65,7 +65,7 @@ A cohesive architectural methodology designed to translate high-level enterprise
 
 | Framework | Architecture Scope | Core Invariant Enforced | Repository |
 | :--- | :--- | :--- | :--- |
-| **E2A** (Enterprise-to-Agentic) | Runtime Governance | Invariant lifecycle execution via single entry point; pre-compute validation gates | [e2a-framework](https://github.com/subhamviky/e2a-framework) |
+| **E2A** (Enterprise-to-Agentic) | Runtime Governance | Invariant lifecycle execution via single entry point; pre-compute validation gates; governed, vendor-neutral model access | [e2a-framework](https://github.com/subhamviky/e2a-framework) |
 | **A2C** (Architecture-to-Code) | Modernization Engine | Injects operational NFRs, schemas, and CI/CD policies directly at code generation | [a2c-framework](https://github.com/subhamviky/a2c-framework) |
 | **P0** (Phase Zero) | Ingress & Scaffolding | Zero-drift workspace bootstrap with pre-wired telemetry, auth, and contract harnesses | in [a2c-framework](https://github.com/subhamviky/a2c-framework) |
 | **G2C** (Generate-to-Class) | Model Compiler | Compiles declarative architecture specifications into typed, contract-bound classes | in [a2c-framework](https://github.com/subhamviky/a2c-framework) |
@@ -87,6 +87,7 @@ Concrete runtimes proving the framework's deterministic boundaries and enterpris
 | `@abstractmethod` NFR | Required NFR contract | Container task definition fails without `/health` |
 | CriticAgent | Evaluation gate in CI/CD + SLO alarm | Deployment or completion blocked below threshold |
 | Public entry point | API Gateway + ALB | Single ingress boundary |
+| `BaseLLMAgentService` | Inference Gateway tier (Tier 2b) | gRPC + queue ingress, autoscaled on in-flight/backlog, Redis-compatible semantic cache |
 → [Full reference](https://github.com/subhamviky/e2a-framework/blob/main/docs/CLOUD_LANDING_ZONE.md)
 
 ## What I've Delivered at Enterprise Scale
