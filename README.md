@@ -5,6 +5,7 @@
 Now applying the same core invariants — idempotency, sagas, transactional outbox, scoped credentials, and evaluation gates — to agentic AI.
 
 **Start here**
+- 🚀 **Two-page summary:** [E2A — Value, Capabilities & Where It Applies](https://github.com/subhamviky/e2a-framework/blob/main/docs/E2A_STRATEGIC_OVERVIEW.md)
 - 📄 **Whitepaper:** [E2A — Harmonizing the Frontier](https://github.com/subhamviky/e2a-framework/blob/main/docs/e2a_architecture_framework_whitepaper.md)
 - 🗺️ **Pattern Map:** [Frontier AI Concept → Distributed Systems Pattern → Cloud Service Matrix](https://github.com/subhamviky/e2a-framework/blob/main/docs/enterprise_architecture_ai_pattern_mapping_matrix.md)
 - ✍️ **Core Thesis:** [Why Agentic AI Makes Application Modernization Mandatory](https://www.linkedin.com/pulse/why-agentic-ai-makes-application-modernization-mandatory-subham-gupta-rahne/)
