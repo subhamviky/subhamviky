@@ -231,6 +231,14 @@ Python · FastAPI · AWS Lambda · SQS/DLQ · DynamoDB · CloudWatch · Amazon B
 
 **Patterns explored:** asynchronous reconciliation, conditional-write idempotency, DLQ handling, serverless execution, and agent routing.
 
+### Capability-Oriented DSA (Enterprise Lens)
+
+🔗 [capability-oriented-dsa](https://github.com/subhamviky/capability-oriented-dsa)
+
+Python · zero runtime dependencies · mypy strict · GitHub Actions
+
+**Patterns explored:** one governed entry point, declared operations instead of branching, ordered configuration resolution, request identifiers (`correlation_id`, `tenant_id`, `idempotency_key`) and honest structured results, applied to classical data structures and algorithms as a bridge for enterprise developers.
+
 > **Evidence discipline:** Reference implementations demonstrate architectural feasibility and implementation patterns. They are not presented as production validation unless a specific repository provides explicit production evidence.
 
 ---
