@@ -1,6 +1,6 @@
 # Hi, I'm Subham Gupta 👋
 
-**Staff Architect & AI Architecture Framework Author | Enterprise-to-Cloud & Agentic AI Architecture**
+**Principal Engineer and Systems Architect & AI Architecture Framework Author | Enterprise-to-Cloud & Agentic AI Architecture**
 
 *Translating 13+ years of enterprise transaction integrity, distributed-systems discipline, and cloud-native architecture into governed Agentic AI systems.*
 
