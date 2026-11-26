@@ -20,7 +20,7 @@
 | Project | 1. The spike | 3. The completed project | What the frameworks changed |
 |---|---|---|---|
 | **Financial Settlement Platform** | [`spike/v1-original`](https://github.com/subhamviky/financial-settlement-platform/tree/spike/v1-original): three Java services, Kafka, Redis, Spring AI | [`main`](https://github.com/subhamviky/financial-settlement-platform): CQRS ledger with saga and outbox + Python audit agent · Azure IaC | E2A Deterministic CQRS profile, E2A agent + RAG |
-| **Payment Reconciliation Engine** | [`spike/v1-original`](https://github.com/subhamviky/aws-reconciliation-engine/tree/spike/v1-original): serverless payment intake on AWS, agent layer planned | [`main`](https://github.com/subhamviky/aws-reconciliation-engine): DSA-governed matching, agent proposes / rules decide, ledger write-offs · AWS IaC applied in CI | DSA, E2A propose-authorize-confirm |
+| **Payment Reconciliation Engine** | [`spike/v1-original`](https://github.com/subhamviky/payment-reconciliation-engine/tree/spike/v1-original): serverless payment intake on AWS, agent layer planned | [`main`](https://github.com/subhamviky/aws-reconciliation-engine): DSA-governed matching, agent proposes / rules decide, ledger write-offs · AWS IaC applied in CI | DSA, E2A propose-authorize-confirm |
 | **Order-to-Cash Agentic AI** | [`spike/v1-original`](https://github.com/subhamviky/order-to-cash-agentic-ai/tree/spike/v1-original): five-agent LangGraph design on Bedrock | [`main`](https://github.com/subhamviky/order-to-cash-agentic-ai): five E2A agents, governed tools, human approval, release gate · GCP IaC | E2A workflow, tools, governance, AI-DLC gate |
 
 Every completed service was scaffolded by the AI-DLC pipeline (P0 + G2C + A2C) from one request file, and the three projects run together in one end-to-end demo (`landscape-demo`, 16 checked steps): an order in plain language, a settlement in the ledger, a bank statement reconciled, a write-off posted back.
@@ -227,6 +227,29 @@ The framework family is vendor-neutral by design. Reference mappings span **AWS 
 
 ---
 
+## 🌐 Live Reference Landscape — Finance Investigation on Google Cloud (free tier)
+
+🔗 [enterprise-finance-genai-assistant](https://github.com/subhamviky/enterprise-finance-genai-assistant)
+
+The three reference runtimes below, plus a new GenAI application, run together as one landscape on **real Google Cloud, inside the free tier** (Cloud Run scaled to zero, Firestore, Pub/Sub, a PostgreSQL ledger on an Always Free VM, Gemini's free tier). The assistant investigates why a payment is unmatched or a settlement is flagged, **proposes** a write-off within policy, and the ledger posts it **only after a second person approves**, exactly once. That is the second principle above, running against real infrastructure.
+
+| System | Repository |
+|---|---|
+| GenAI assistant (investigate, propose, four-eyes approval) | [enterprise-finance-genai-assistant](https://github.com/subhamviky/enterprise-finance-genai-assistant) |
+| Settlement ledger and audit service | [financial-settlement-platform](https://github.com/subhamviky/financial-settlement-platform) |
+| Bank-line reconciliation | [payment-reconciliation-engine](https://github.com/subhamviky/payment-reconciliation-engine) |
+| Order-to-cash assistant | [order-to-cash-agentic-ai](https://github.com/subhamviky/order-to-cash-agentic-ai) |
+
+**What was measured (25 November 2026, synthetic data, one author):**
+
+- An end-to-end scenario across the five deployed services passed (about 125 seconds on 25 November, 1 minute 49 seconds in total on 26 November after the fixes the first run led to): order, event, audit flag, short payment, cited explanation, proposal, refusal of the requester, approval by a second person, one posting to a balanced ledger, replays with no second posting, an injection refused, another tenant reading nothing. Billing for the project stayed at 0.00.
+- Against the live model (`gemini-3.5-flash-lite`, free tier) the 53 golden cases scored **0.943** (mean), up from 0.855 after two fixes that only the live run could find, and all nine red-team cases passed. The report states what that score does not show.
+- The first deployment found real problems that the emulator-based tests had not (a password newline between PostgreSQL and Cloud Run, an identity-token issuer spelled two ways, JSON wrapped in a markdown fence ending a workflow, a reworded model reason that could have made a second postable proposal, and others). Each has a cause, a fix and a test in the repositories.
+
+> **Evidence discipline:** a free-tier reference landscape with synthetic data. It shows the architecture running and being measured; it is not a production claim.
+
+---
+
 ## 📦 From Spikes to Completed Projects
 
 Each project shows both stages: `main` is the completed project built on the framework family; the branch `spike/v1-original` (tag `spike-v1`) keeps the spike that informed it.
@@ -236,21 +259,21 @@ Each project shows both stages: `main` is the completed project built on the fra
 🔗 [order-to-cash-agentic-ai](https://github.com/subhamviky/order-to-cash-agentic-ai) · [the spike](https://github.com/subhamviky/order-to-cash-agentic-ai/tree/spike/v1-original)
 
 - **Spike (Apr 2026):** Python · FastAPI · LangGraph · Amazon Bedrock · OpenSearch · Terraform. *Explored* multi-agent coordination, hybrid retrieval, policy controls and idempotency.
-- **Completed (Nov 2026):** Python · FastAPI · E2A · DSA · Cloud Run (Terraform). Five E2A agents in one workflow, governed tools with typed outcomes against the two other projects, hybrid RAG, MCP, human approval with four eyes, and an AI-DLC release gate (seven stages, RAGAS gate, red team).
+- **Completed (Nov 2026):** Python · FastAPI · E2A · DSA · Cloud Run (Terraform). Five E2A agents in one workflow, governed tools with typed outcomes against the two other projects, hybrid RAG, MCP, human approval with four eyes, and an AI-DLC release gate (seven stages, RAGAS gate, red team). Runs in the live Google Cloud free-tier landscape above (state in Firestore).
 
 ### Cloud-Native Financial Settlement Platform
 
 🔗 [financial-settlement-platform](https://github.com/subhamviky/financial-settlement-platform) · [the spike](https://github.com/subhamviky/financial-settlement-platform/tree/spike/v1-original)
 
 - **Spike (Apr 2026):** Java 21 · Spring Boot · Spring AI · Kafka · Redis · PostgreSQL. *Explored* saga orchestration, compensation, Redis-backed idempotency, distributed messaging and financial-integrity controls.
-- **Completed (Nov 2026):** Java 21 on E2A's Deterministic CQRS profile (double-entry ledger, saga with compensation, transactional outbox, versioned event contract, write-offs and refunds) and a Python E2A audit agent with policy retrieval · Azure (Terraform).
+- **Completed (Nov 2026):** Java 21 on E2A's Deterministic CQRS profile (double-entry ledger, saga with compensation, transactional outbox, versioned event contract, write-offs and refunds) and a Python E2A audit agent with policy retrieval · Azure (Terraform). Runs on Azure and, in the live landscape above, on the Google Cloud free tier (the ledger on an Always Free VM).
 
 ### Cloud-Native Payment Reconciliation Engine
 
-🔗 [aws-reconciliation-engine](https://github.com/subhamviky/aws-reconciliation-engine) · [the spike](https://github.com/subhamviky/aws-reconciliation-engine/tree/spike/v1-original)
+🔗 [payment-reconciliation-engine](https://github.com/subhamviky/payment-reconciliation-engine) (renamed from `aws-reconciliation-engine`; old links redirect) · [the spike](https://github.com/subhamviky/payment-reconciliation-engine/tree/spike/v1-original)
 
 - **Spike (Mar 2026):** Python · FastAPI · AWS Lambda · SQS/DLQ · DynamoDB · Amazon Bedrock. *Explored* asynchronous processing, conditional-write idempotency, DLQ handling and agent routing.
-- **Completed (Nov 2026):** Python on Lambda with matching on governed DSA operations, one DynamoDB transaction per match, an E2A agent that proposes while rules decide, and write-offs posted to the settlement ledger · AWS Terraform applied to a local AWS emulator in CI.
+- **Completed (Nov 2026):** Python on Lambda with matching on governed DSA operations, one DynamoDB transaction per match, an E2A agent that proposes while rules decide, and write-offs posted to the settlement ledger · AWS Terraform applied to a local AWS emulator in CI. The same service also runs on Cloud Run, Pub/Sub and Firestore by configuration, and runs in the live landscape above.
 
 ### Capability-Oriented DSA (Enterprise Lens)
 
