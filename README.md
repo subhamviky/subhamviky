@@ -1,10 +1,29 @@
 # Hi, I'm Subham Gupta 👋
 
-**Staff Architect & AI Architecture Framework Author | Enterprise-to-Cloud & Agentic AI Architecture**
+**Principal Engineer and Systems Architect & AI Architecture Framework Author | Enterprise-to-Cloud & Agentic AI Architecture**
 
 *Translating 13+ years of enterprise transaction integrity, distributed-systems discipline, and cloud-native architecture into governed Agentic AI systems.*
 
-> **Status:** Solo-authored architecture R&D, actively evolving. Architectural spikes and reference runtimes below exercise the framework ideas against real, non-production workloads unless a repository explicitly states otherwise.
+> **Status:** Solo-authored architecture R&D, actively evolving. The architectural spikes and the completed projects built from them exercise the framework ideas on non-production workloads; nothing here claims production validation unless a repository explicitly states otherwise.
+
+## The Journey at a Glance
+
+```text
+ 1. ARCHITECTURAL SPIKES          2. FRAMEWORKS                  3. COMPLETED PROJECTS
+    (Mar - Apr 2026)                 (Apr - Nov 2026)               (Nov 2026)
+ hands-on experiments that  -->   the recurring controls   -->   the same three systems,
+ found the patterns and the       became reusable contracts:     rebuilt by consuming the
+ gaps: the same controls          E2A, A2C, P0, G2C, AI-DLC,     frameworks; now one working
+ rebuilt by hand everywhere       Deterministic CQRS, DSA        Order-to-Cash landscape
+```
+
+| Project | 1. The spike | 3. The completed project | What the frameworks changed |
+|---|---|---|---|
+| **Financial Settlement Platform** | [`spike/v1-original`](https://github.com/subhamviky/financial-settlement-platform/tree/spike/v1-original): three Java services, Kafka, Redis, Spring AI | [`main`](https://github.com/subhamviky/financial-settlement-platform): CQRS ledger with saga and outbox + Python audit agent · Azure IaC | E2A Deterministic CQRS profile, E2A agent + RAG |
+| **Payment Reconciliation Engine** | [`spike/v1-original`](https://github.com/subhamviky/payment-reconciliation-engine/tree/spike/v1-original): serverless payment intake on AWS, agent layer planned | [`main`](https://github.com/subhamviky/aws-reconciliation-engine): DSA-governed matching, agent proposes / rules decide, ledger write-offs · AWS IaC applied in CI | DSA, E2A propose-authorize-confirm |
+| **Order-to-Cash Agentic AI** | [`spike/v1-original`](https://github.com/subhamviky/order-to-cash-agentic-ai/tree/spike/v1-original): five-agent LangGraph design on Bedrock | [`main`](https://github.com/subhamviky/order-to-cash-agentic-ai): five E2A agents, governed tools, human approval, release gate · GCP IaC | E2A workflow, tools, governance, AI-DLC gate |
+
+Every completed service was scaffolded by the AI-DLC pipeline (P0 + G2C + A2C) from one request file, and the three projects run together in one end-to-end demo (`landscape-demo`, 16 checked steps): an order in plain language, a settlement in the ledger, a bank statement reconciled, a write-off posted back.
 
 ## Core Thesis
 
@@ -62,14 +81,19 @@ Enterprise Transactional & Distributed-Systems Experience
                    v             v
         Deterministic CQRS     AI-DLC
              Profile        Assurance Lifecycle
+                    \           /
+                     v         v
+         Completed projects: the spikes rebuilt
+           by consuming the framework family
 ```
 
 Chronology and runtime composition are deliberately different views. **E2A emerged first historically**, while **P0 and G2C can execute earlier in a solution lifecycle** because they prepare foundations and contracts before runtime execution.
 
-The architectural spikes therefore have two roles:
+The architectural spikes therefore have three roles:
 
 - **Discovery spikes** helped reveal and test the cross-runtime invariants that led to E2A.
 - **Reference runtimes** exercise, challenge, and refine formalized framework patterns after those patterns exist.
+- **Completed projects** close the loop: each spike was rebuilt on the released frameworks, and its spike is kept on a branch so the growth stays visible.
 
 ---
 
@@ -218,7 +242,7 @@ The three reference runtimes below, plus a new GenAI application, run together a
 
 **What was measured (25 November 2026, synthetic data, one author):**
 
-- An end-to-end scenario across the five deployed services passed in about 125 seconds: order, event, audit flag, short payment, cited explanation, proposal, refusal of the requester, approval by a second person, one posting to a balanced ledger, replays with no second posting, an injection refused, another tenant reading nothing. Billing for the project stayed at 0.00.
+- An end-to-end scenario across the five deployed services passed (about 125 seconds on 25 November, 1 minute 49 seconds in total on 26 November after the fixes the first run led to): order, event, audit flag, short payment, cited explanation, proposal, refusal of the requester, approval by a second person, one posting to a balanced ledger, replays with no second posting, an injection refused, another tenant reading nothing. Billing for the project stayed at 0.00.
 - Against the live model (`gemini-3.5-flash-lite`, free tier) the 53 golden cases scored **0.943** (mean), up from 0.855 after two fixes that only the live run could find, and all nine red-team cases passed. The report states what that score does not show.
 - The first deployment found real problems that the emulator-based tests had not (a password newline between PostgreSQL and Cloud Run, an identity-token issuer spelled two ways, JSON wrapped in a markdown fence ending a workflow, a reworded model reason that could have made a second postable proposal, and others). Each has a cause, a fix and a test in the repositories.
 
@@ -226,33 +250,30 @@ The three reference runtimes below, plus a new GenAI application, run together a
 
 ---
 
-## 📦 Architectural Spikes & Reference Runtimes
+## 📦 From Spikes to Completed Projects
 
-These projects are architecture R&D evidence. Some contributed to discovering the framework principles; later/evolved implementations are used to exercise and refine formal contracts.
+Each project shows both stages: `main` is the completed project built on the framework family; the branch `spike/v1-original` (tag `spike-v1`) keeps the spike that informed it.
 
 ### Order-to-Cash Agentic AI Platform
 
-🔗 [order-to-cash-agentic-ai](https://github.com/subhamviky/order-to-cash-agentic-ai)
+🔗 [order-to-cash-agentic-ai](https://github.com/subhamviky/order-to-cash-agentic-ai) · [the spike](https://github.com/subhamviky/order-to-cash-agentic-ai/tree/spike/v1-original)
 
-Python · FastAPI · E2A · Cloud Run · Firestore · Pub/Sub · Terraform (the original LangGraph, Bedrock and OpenSearch spike is kept on a branch)
-
-**Patterns explored:** governed multi-agent workflow with human approval, hybrid retrieval, policy controls, asynchronous events, idempotency and crash recovery, calls to real systems of record with typed outcomes. Runs on the Google Cloud free tier in the live landscape above.
+- **Spike (Apr 2026):** Python · FastAPI · LangGraph · Amazon Bedrock · OpenSearch · Terraform. *Explored* multi-agent coordination, hybrid retrieval, policy controls and idempotency.
+- **Completed (Nov 2026):** Python · FastAPI · E2A · DSA · Cloud Run (Terraform). Five E2A agents in one workflow, governed tools with typed outcomes against the two other projects, hybrid RAG, MCP, human approval with four eyes, and an AI-DLC release gate (seven stages, RAGAS gate, red team). Runs in the live Google Cloud free-tier landscape above (state in Firestore).
 
 ### Cloud-Native Financial Settlement Platform
 
-🔗 [financial-settlement-platform](https://github.com/subhamviky/financial-settlement-platform)
+🔗 [financial-settlement-platform](https://github.com/subhamviky/financial-settlement-platform) · [the spike](https://github.com/subhamviky/financial-settlement-platform/tree/spike/v1-original)
 
-Java 21 · Spring Boot · PostgreSQL · transactional outbox · a Python E2A audit service · Azure and Google Cloud (the original Kafka, Redis and Spring AI spike is kept on a branch)
-
-**Patterns explored:** transactional saga orchestration, compensation, idempotent commands, an event feed with a checked contract, ledger adjustments posted once, and financial-integrity controls. Runs on the Google Cloud free tier in the live landscape above.
+- **Spike (Apr 2026):** Java 21 · Spring Boot · Spring AI · Kafka · Redis · PostgreSQL. *Explored* saga orchestration, compensation, Redis-backed idempotency, distributed messaging and financial-integrity controls.
+- **Completed (Nov 2026):** Java 21 on E2A's Deterministic CQRS profile (double-entry ledger, saga with compensation, transactional outbox, versioned event contract, write-offs and refunds) and a Python E2A audit agent with policy retrieval · Azure (Terraform). Runs on Azure and, in the live landscape above, on the Google Cloud free tier (the ledger on an Always Free VM).
 
 ### Cloud-Native Payment Reconciliation Engine
 
-🔗 [payment-reconciliation-engine](https://github.com/subhamviky/payment-reconciliation-engine) (renamed from `aws-reconciliation-engine`; old links redirect)
+🔗 [payment-reconciliation-engine](https://github.com/subhamviky/payment-reconciliation-engine) (renamed from `aws-reconciliation-engine`; old links redirect) · [the spike](https://github.com/subhamviky/payment-reconciliation-engine/tree/spike/v1-original)
 
-Python · FastAPI · E2A · DSA · AWS Lambda, SQS and DynamoDB, or Cloud Run, Pub/Sub and Firestore · Terraform
-
-**Patterns explored:** asynchronous reconciliation, one transaction per match, duplicate and ambiguity handling, dead-letter replay, an agent that proposes while rules decide. The same service runs on AWS or on the Google Cloud free tier by configuration.
+- **Spike (Mar 2026):** Python · FastAPI · AWS Lambda · SQS/DLQ · DynamoDB · Amazon Bedrock. *Explored* asynchronous processing, conditional-write idempotency, DLQ handling and agent routing.
+- **Completed (Nov 2026):** Python on Lambda with matching on governed DSA operations, one DynamoDB transaction per match, an E2A agent that proposes while rules decide, and write-offs posted to the settlement ledger · AWS Terraform applied to a local AWS emulator in CI. The same service also runs on Cloud Run, Pub/Sub and Firestore by configuration, and runs in the live landscape above.
 
 ### Capability-Oriented DSA (Enterprise Lens)
 
@@ -262,7 +283,7 @@ Python · zero runtime dependencies · mypy strict · GitHub Actions
 
 **Patterns explored:** one governed entry point, declared operations instead of branching, ordered configuration resolution, request identifiers (`correlation_id`, `tenant_id`, `idempotency_key`) and honest structured results, applied to classical data structures and algorithms as a bridge for enterprise developers.
 
-> **Evidence discipline:** Reference implementations demonstrate architectural feasibility and implementation patterns. They are not presented as production validation unless a specific repository provides explicit production evidence.
+> **Evidence discipline:** The completed projects are verified in CI (tests, contracts, Terraform, a cross-project demo) with a simulated model and are not deployed. They demonstrate architectural feasibility and implementation patterns; they are not presented as production validation unless a specific repository provides explicit production evidence.
 
 ---
 
