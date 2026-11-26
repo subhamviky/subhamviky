@@ -203,6 +203,29 @@ The framework family is vendor-neutral by design. Reference mappings span **AWS 
 
 ---
 
+## 🌐 Live Reference Landscape — Finance Investigation on Google Cloud (free tier)
+
+🔗 [enterprise-finance-genai-assistant](https://github.com/subhamviky/enterprise-finance-genai-assistant)
+
+The three reference runtimes below, plus a new GenAI application, run together as one landscape on **real Google Cloud, inside the free tier** (Cloud Run scaled to zero, Firestore, Pub/Sub, a PostgreSQL ledger on an Always Free VM, Gemini's free tier). The assistant investigates why a payment is unmatched or a settlement is flagged, **proposes** a write-off within policy, and the ledger posts it **only after a second person approves**, exactly once. That is the second principle above, running against real infrastructure.
+
+| System | Repository |
+|---|---|
+| GenAI assistant (investigate, propose, four-eyes approval) | [enterprise-finance-genai-assistant](https://github.com/subhamviky/enterprise-finance-genai-assistant) |
+| Settlement ledger and audit service | [financial-settlement-platform](https://github.com/subhamviky/financial-settlement-platform) |
+| Bank-line reconciliation | [payment-reconciliation-engine](https://github.com/subhamviky/payment-reconciliation-engine) |
+| Order-to-cash assistant | [order-to-cash-agentic-ai](https://github.com/subhamviky/order-to-cash-agentic-ai) |
+
+**What was measured (25 November 2026, synthetic data, one author):**
+
+- An end-to-end scenario across the five deployed services passed in about 125 seconds: order, event, audit flag, short payment, cited explanation, proposal, refusal of the requester, approval by a second person, one posting to a balanced ledger, replays with no second posting, an injection refused, another tenant reading nothing. Billing for the project stayed at 0.00.
+- Against the live model (`gemini-3.5-flash-lite`, free tier) the 53 golden cases scored **0.943** (mean), up from 0.855 after two fixes that only the live run could find, and all nine red-team cases passed. The report states what that score does not show.
+- The first deployment found real problems that the emulator-based tests had not (a password newline between PostgreSQL and Cloud Run, an identity-token issuer spelled two ways, JSON wrapped in a markdown fence ending a workflow, a reworded model reason that could have made a second postable proposal, and others). Each has a cause, a fix and a test in the repositories.
+
+> **Evidence discipline:** a free-tier reference landscape with synthetic data. It shows the architecture running and being measured; it is not a production claim.
+
+---
+
 ## 📦 Architectural Spikes & Reference Runtimes
 
 These projects are architecture R&D evidence. Some contributed to discovering the framework principles; later/evolved implementations are used to exercise and refine formal contracts.
@@ -211,25 +234,25 @@ These projects are architecture R&D evidence. Some contributed to discovering th
 
 🔗 [order-to-cash-agentic-ai](https://github.com/subhamviky/order-to-cash-agentic-ai)
 
-Python · FastAPI · LangGraph · Amazon Bedrock · OpenSearch · Terraform · ECS Fargate
+Python · FastAPI · E2A · Cloud Run · Firestore · Pub/Sub · Terraform (the original LangGraph, Bedrock and OpenSearch spike is kept on a branch)
 
-**Patterns explored:** multi-agent coordination, hybrid retrieval, policy controls, asynchronous processing, idempotency, circuit breaking, and infrastructure automation.
+**Patterns explored:** governed multi-agent workflow with human approval, hybrid retrieval, policy controls, asynchronous events, idempotency and crash recovery, calls to real systems of record with typed outcomes. Runs on the Google Cloud free tier in the live landscape above.
 
 ### Cloud-Native Financial Settlement Platform
 
 🔗 [financial-settlement-platform](https://github.com/subhamviky/financial-settlement-platform)
 
-Java 21 · Spring Boot · Spring AI · Kafka · Redis · PostgreSQL · Docker
+Java 21 · Spring Boot · PostgreSQL · transactional outbox · a Python E2A audit service · Azure and Google Cloud (the original Kafka, Redis and Spring AI spike is kept on a branch)
 
-**Patterns explored:** transactional saga orchestration, compensation, Redis-backed idempotency, distributed messaging, and financial-integrity controls.
+**Patterns explored:** transactional saga orchestration, compensation, idempotent commands, an event feed with a checked contract, ledger adjustments posted once, and financial-integrity controls. Runs on the Google Cloud free tier in the live landscape above.
 
 ### Cloud-Native Payment Reconciliation Engine
 
-🔗 [aws-reconciliation-engine](https://github.com/subhamviky/aws-reconciliation-engine)
+🔗 [payment-reconciliation-engine](https://github.com/subhamviky/payment-reconciliation-engine) (renamed from `aws-reconciliation-engine`; old links redirect)
 
-Python · FastAPI · AWS Lambda · SQS/DLQ · DynamoDB · CloudWatch · Amazon Bedrock
+Python · FastAPI · E2A · DSA · AWS Lambda, SQS and DynamoDB, or Cloud Run, Pub/Sub and Firestore · Terraform
 
-**Patterns explored:** asynchronous reconciliation, conditional-write idempotency, DLQ handling, serverless execution, and agent routing.
+**Patterns explored:** asynchronous reconciliation, one transaction per match, duplicate and ambiguity handling, dead-letter replay, an agent that proposes while rules decide. The same service runs on AWS or on the Google Cloud free tier by configuration.
 
 ### Capability-Oriented DSA (Enterprise Lens)
 
